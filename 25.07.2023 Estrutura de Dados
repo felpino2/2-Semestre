@@ -20,6 +20,12 @@ int main () {
 	multiplicacao[i][j] = 0;
 	}
 }
+	for (i = 0; i < 2; i++) {
+		for (j = 0; j < 2; j++){
+			multiplicação[i][j] = 0
+	}
+}
+	
 	
 	// Preenchimento
 	for (i = 0; i < 2 ; i++) {
@@ -37,6 +43,11 @@ int main () {
 }
 
 	//Multiplicação
+	for (i = 0; i < 2; i++) {
+		for (j = 0; j < 2; j++){
+			multiplicação[i][j] = matriz[i][j] * 
+		}
+	}
 
 
 	//Impressão
@@ -53,12 +64,12 @@ int main () {
 }
 	printf("\n");
 }
-	printf("\n")
+	printf("\n");
 	for (i = 0; i < 2 ; i++) {
 		for (j = 0; j < 2; j++){	
 	("%d\t", multiplicacao[i][j]);
 	}
-	printf("\n")
+	printf("\n");
 }
 
 }
