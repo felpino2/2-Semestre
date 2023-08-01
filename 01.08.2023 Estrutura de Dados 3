@@ -1,0 +1,42 @@
+// Programa de Busca Exaustiva
+
+#import <stdio.h>
+#import <stdlib.h>
+#import <time.h>
+
+	// Decl. de Variáveis
+	int vetor[10000];
+	int i = 0;
+	time_t t;
+	int busca;
+	int achei; 
+
+
+// Função Principal de Execução de Programa
+
+int main () {
+	//Inicialização de aleatoriedade
+	srand((unsigned) time(&t));
+	
+	// Inicialização do Vetor
+	for (i = 0; i < 10000 ; i++){
+	vetor[i] = (rand() % 10000);
+}
+
+// Definição da Busca
+printf("Digite o numero a ser buscado: ");
+scanf("%d", &busca);
+
+// Busca propriamente dita
+	for (i = 0 ; i < 10000; i++) {
+		if (vetor[i] ==  busca) {
+			achei = i;
+		}
+	}
+	if (achei == -1) {
+		printf("Se fodeu ! Não existe ! %d", );
+	} else {
+		printf("Achei na posicao %d ", achei);
+	}
+
+}
