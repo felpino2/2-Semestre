@@ -1,0 +1,97 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+// Declara o ponteiro e & endereça o ponteiro
+
+char *c;
+
+// Programa de Lista Encadeada Simples
+
+
+// Definição da Estrutura do Nó
+
+struct no {
+	int numero;
+	struct no *proximo;
+	
+};
+
+// Declaracao de Variáveis
+struct no *cabeca;
+
+// funcao que insere um nó na lista
+
+void inserir(int parametroNumero){
+	
+	//Criar um novo no
+	struct no *novoNo = NULL;
+	novoNo = (struct no *) malloc(sizeof(struct no *)); // Para inserir tem que alocar memória com alloc
+	novoNo -> numero = parametroNumero;
+	novoNo -> proximo = NULL;
+		
+	
+	if (cabeca == NULL) {  //cabeca, lista está vazia
+		cabeca = novoNo;
+		
+	} else { //lista cheia
+		// Procurar o Ultimo elemento da lista
+		struct no *ponteiro = cabeca;
+		while (ponteiro -> proximo != NULL){
+			ponteiro = ponteiro -> proximo;
+		}
+		//Apontar o ultimo para o novo
+		
+		ponteiro -> proximo = novoNo;
+		
+	}
+	
+}
+
+// Funcao que imprime os elementos da lista (os nós)
+
+void imprimir (){
+	struct no *ponteiro = cabeca;
+	while (ponteiro != NULL) {
+		printf("%d\n", ponteiro -> numero);
+		ponteiro = ponteiro -> proximo;
+	}
+	
+}
+//Funcao que remove um elemento da lista
+void remover(int parametroNumero){
+	struct no *ponteiroAnterior;
+	struct no *ponteiroExcluir;
+	
+	if (cabeca != NULL){
+		if (cabeca ->  numero == parametroNumero){
+			ponteiroExcluir = cabeca;
+			cabeca = cabeca -> proximo;
+			free(ponteiroExcluir);
+		} else {
+			ponteiroAnterior = cabeca;
+			while ((ponteiroAnterior -> proximo != NULL) && (ponteiroAnterior -> proximo -> numero != parametroNumero)) {
+				ponteiroAnterior = ponteiroAnterior -> proximo;
+			}
+		}
+		if (ponteiroAnterior -> proximo != NULL){
+			ponteiroExcluir = ponteiroAnterior -> proximo;
+			ponteiroAnterior -> proximo = ponteiroExcluir -> proximo;
+			free(ponteiroExcluir);
+		}
+	}
+}
+
+// Funcao principal de execucao do programa
+
+int main() {
+	inserir(1);
+	inserir(2);
+	inserir(3);
+	inserir(4);
+	inserir(5);
+	inserir(6);
+	
+	remover(7);
+	
+	imprimir();
+}
