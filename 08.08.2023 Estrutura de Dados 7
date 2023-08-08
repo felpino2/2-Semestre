@@ -26,22 +26,23 @@ void inserir(int parametroNumero){
 	//Criar um novo no
 	struct no *novoNo = NULL;
 	novoNo = (struct no *) malloc(sizeof(struct no *)); // Para inserir tem que alocar memória com alloc
-	novoNo -> numero = parametroNumero;
-	novoNo -> proximo = NULL;
+	novoNo -> numero = parametroNumero; // numero que recebe
+	
+	novoNo -> proximo = NULL; // proximo é vazio, só do último
 		
 	
 	if (cabeca == NULL) {  //cabeca, lista está vazia
-		cabeca = novoNo;
+		cabeca = novoNo; // cabeca agora é igual a estrutura acima (numero int e uma proxima struct)
 		
 	} else { //lista cheia
 		// Procurar o Ultimo elemento da lista
-		struct no *ponteiro = cabeca;
-		while (ponteiro -> proximo != NULL){
-			ponteiro = ponteiro -> proximo;
+		struct no *ponteiro = cabeca; // ponteiro agora é a cabeca que é sempre o que aponta para o primeiro elemento
+		while (ponteiro -> proximo != NULL) { // ponteiro aponta pra um ponteiro que se chama proximo  
+			ponteiro = ponteiro -> proximo; // ponteiro vira onde aponta (ponteiro) a proxima struct, proximo é uma struct
 		}
-		//Apontar o ultimo para o novo
+		//Apontar o ultimo para o novo (proximo é nulo)
 		
-		ponteiro -> proximo = novoNo;
+		ponteiro -> proximo = novoNo; // Novo nó que armazena o último 
 		
 	}
 	
@@ -95,3 +96,4 @@ int main() {
 	
 	imprimir();
 }
+
