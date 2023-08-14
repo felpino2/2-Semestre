@@ -1,0 +1,9 @@
+#Tratamento de Erro
+
+x = int(input("Digite um número para x: "))
+y = int(input("Digite um número para y: "))
+try:
+    z = x / y
+    print(z)
+except:
+    print("nao pode dividir por 0 ")
