@@ -24,5 +24,9 @@ def avalianotas():
         else:
             Notas[i] = 'F'
 
+notanome()
+avalianotas()
+
 for i in range(len(Notas)):
+    print("Aluno: " , nome[i],"Nota", Notas[i])
     print("Aluno: " , nome[i],"Nota", Notas[i])
