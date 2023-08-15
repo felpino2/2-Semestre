@@ -1,0 +1,22 @@
+#1.
+def imprime(l):
+    print(l)
+    print(id(l))
+
+
+x = [1, 6, 4, 3, 8]
+imprime(x)
+print(id(x))
+
+#2.
+def soma(a, b):
+    return(a + b)
+
+def imprime(x):
+    print("Soma é", x)
+
+y = 6
+z = 5
+
+s = soma(y, z)
+imprime (s)
