@@ -64,7 +64,6 @@ void excluir(int numero) {
 			//Para excluir o primeiro
 			if (ponteiro == cabeca) {
 				cabeca = cabeca -> proximo;
-				cabeca -> anterior = NULL;
 				if (cabeca != NULL){ // Caso só tenha um elemento na lista
 					cabeca -> anterior = NULL;
 				}
@@ -92,14 +91,14 @@ int main() {
 	inserir(2);
 	inserir(3);
 	inserir(4);
-	inserir(5);
-	inserir(6);
+
 	
 	imprimir();
 	
-	excluir(2);
+	excluir(1);
 	
 	imprimir();
 	
 	
 }
+
