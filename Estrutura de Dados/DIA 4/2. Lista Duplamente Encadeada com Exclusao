@@ -65,6 +65,9 @@ void excluir(int numero) {
 			if (ponteiro == cabeca) {
 				cabeca = cabeca -> proximo;
 				cabeca -> anterior = NULL;
+				if (cabeca != NULL){ // Caso só tenha um elemento na lista
+					cabeca -> anterior = NULL;
+				}
 			} else if (ponteiro -> proximo == NULL){ // Excluir o Ultimo
 				ponteiro -> anterior -> proximo = NULL;
 			} else {
