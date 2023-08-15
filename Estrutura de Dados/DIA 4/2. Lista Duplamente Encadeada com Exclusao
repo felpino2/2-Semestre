@@ -1,1 +1,102 @@
+//Programa de Lista Duplamente Encadeada
 
+#include <stdio.h>
+#include <stdlib.h>
+
+// Definição da Estrutura de No
+
+struct no {
+	int numero;
+	struct no *anterior;
+	struct no *proximo;
+};
+
+// Declaracao de Variaveis
+
+struct no *cabeca = NULL; 
+
+// Funcao que Insere um No na lista
+
+void inserir(int numero) {
+	// Inicializacao da Memoria 
+	struct no *novoNo = (struct no *) malloc(sizeof(struct no));
+	novoNo -> numero = numero;
+	novoNo -> anterior = NULL;
+	novoNo -> proximo = NULL;
+	
+	if (cabeca == NULL){
+		// Lista está vazia, caso facil
+		cabeca = novoNo; 
+	} else {
+		//Lista nao vazia, caso dificil
+		struct no *ultimo = cabeca; //cria um ponteiro para apontar para cabeca
+		
+		while (ultimo -> proximo != NULL){ //enquanto o proximo que o ultimo aponta nao e nulo, entao nao chegou no ultimo
+			ultimo = ultimo -> proximo; //agora o ultimo vira o proximo
+		}
+		
+		ultimo -> proximo = novoNo; // agora chegou no ultimo e o proximo dele, que antes apontava para nulo, aponta para o novoNo que agora aponta para Nulo
+		novoNo -> anterior = ultimo; // novoNo tambem aponta para o anterior por ser duplamente encadeada, o anterior dele é o ultimo
+	}	
+	
+}
+
+// Funcao que imprime os nos da lista
+
+void imprimir(){
+	printf("===============\n");
+	
+	struct no *ponteiro = cabeca;
+	
+	while (ponteiro != NULL){
+		printf("%d\n", ponteiro -> numero);
+		ponteiro = ponteiro -> proximo;
+			
+	}
+}
+
+void excluir(int numero) {
+	struct no *ponteiro = cabeca;
+	
+	while (ponteiro != NULL) {
+		if (ponteiro -> numero == numero){
+		// Forcar a exclusao
+			//Para excluir o primeiro
+			if (ponteiro == cabeca) {
+				cabeca = cabeca -> proximo;
+				cabeca -> anterior = NULL;
+			} else if (ponteiro -> proximo == NULL){ // Excluir o Ultimo
+				ponteiro -> anterior -> proximo = NULL;
+			} else {
+				// Excluir no meio	
+			ponteiro -> proximo -> anterior = ponteiro -> anterior; 
+			ponteiro -> anterior -> proximo = ponteiro -> proximo;
+			
+			}
+			
+			free(ponteiro);
+			
+		}
+		
+		ponteiro = ponteiro -> proximo;
+	}
+}
+
+//Funcao Principal de Execucao do Programa
+
+int main() {
+	inserir(1);
+	inserir(2);
+	inserir(3);
+	inserir(4);
+	inserir(5);
+	inserir(6);
+	
+	imprimir();
+	
+	excluir(2);
+	
+	imprimir();
+	
+	
+}
