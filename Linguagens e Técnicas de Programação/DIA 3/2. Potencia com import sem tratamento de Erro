@@ -1,4 +1,4 @@
-import math
+import math # importa biblioteca 
 while True:
     try:
         x = int(input("Digite a base "))
