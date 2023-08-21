@@ -1,6 +1,11 @@
 import math
-x = int(input("Digite a base "))
-y = int(input("Expoente "))
+while True:
+    try:
+        x = int(input("Digite a base "))
+        y = int(input("Expoente "))
+        break
+    except:
+        print("Apenas digite números ")
 
 print(pow(x, y))
 print(math.sqrt(9))
