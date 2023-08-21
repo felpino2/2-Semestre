@@ -1,0 +1,22 @@
+tupla = ('osmar', 123, 4.5, [1, 2, 32, 4]) #aceita mais de um tipo de dado, float string e lista
+#na tupla, os valores são imútaveis, não pode alterar os valores, mas pode na lista
+
+print(tupla)
+print("O tamanho da tupla é ", len(tupla))
+
+lista1 =  tupla[3]
+
+#DICIONÁRIO
+
+aluno = {
+    '01' : "Pedro",
+    '03' : "Joaquim",
+    '05' : "Antonio",
+    '10' : "Izabela",
+    'lista' : [8.0, 9.0, 7.6, 8.0]
+}
+
+print(aluno.values()) #Valores à direita
+print(aluno.keys()) #Valores à esquerda
+
+print(aluno['01'], aluno['lista'][0])
