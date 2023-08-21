@@ -1,0 +1,13 @@
+def potencia(a, b):
+    x = a
+    if b == 0 & a != 0: ##CASO: a potência seja zero, e o número não seja zero
+        return (1)
+    for i in range(b-1):
+        x = x*a
+    return (x)
+
+f = 0
+j = 0
+p  = (potencia(f, j))
+
+print(p)
