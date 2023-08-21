@@ -1,0 +1,26 @@
+def potencia(a, b):
+    x = a
+    if b == 0 & a != 0: ##CASO: a potência seja zero, e o número não seja zero
+        return (1)
+
+    for i in range(b-1):
+        x = x*a
+
+    return (x)
+
+
+def entrada():
+
+    while True:
+        try:
+            x = int(input("Digite a base "))
+            y = int(input("Expoente "))
+            break
+        except:
+            print("Apenas digite números ")
+    return(x,y)
+
+x,y = entrada()
+p  = (potencia(x, y))
+
+print(p)
