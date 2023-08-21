@@ -1,0 +1,6 @@
+import math
+x = int(input("Digite a base "))
+y = int(input("Expoente "))
+
+print(pow(x, y))
+print(math.sqrt(9))
