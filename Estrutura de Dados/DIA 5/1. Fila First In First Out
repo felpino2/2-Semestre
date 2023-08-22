@@ -1,0 +1,76 @@
+// Programa que Implementa uma Fila FIRST IN FIRST OUT
+// A fila implementada tem entrada na CABECA
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declaracao da Estrutura
+
+struct no {
+	int numero;
+	struct no *proximo;
+};
+
+// Declaracao de Variaveis
+
+struct no *cabeca = NULL; // Cabeca comeca a apontar para nulo
+
+// Funcao que insere um No na Fila
+
+void inserir(int numero) {
+	// Instanciacao da Memoria
+	struct no *novoNo = (struct no *) malloc(sizeof(struct no));
+	novoNo -> numero = numero; // novoNo recebe número
+	novoNo -> proximo = cabeca; // novoNo aponta para o mesmo lugar que a cabeca ta apontando que inicialmente, aponta para NULO, depois vai apontar de acordo com a linha de baixo
+	cabeca = novoNo; // Cabeca agora aponta para o Novo No
+}
+
+// Funcao que remove um No da Funcao
+
+int remover() {
+	// Variaveis
+	struct no *ponteiro = cabeca;
+	int retorno = 0;
+	
+	if (cabeca != NULL) {
+		if (cabeca -> proximo == NULL) { // Cabeca apontando pro proximo nulo
+			retorno = cabeca -> numero; // Retorno é igual ao número que a cabeca ta apontando 
+			free(cabeca); // Precisa primeiro limpar, caso contrário, vai dar problema pelo ponteiro ser nulo
+			cabeca = NULL; // Vai anular o No 
+		} else {
+			// Navegacao na Fila ate o Penultimo
+			while (ponteiro -> proximo -> proximo != NULL) { 
+				ponteiro = ponteiro -> proximo; 
+			}
+			
+			retorno = ponteiro -> proximo -> numero; 
+			free(ponteiro -> proximo);
+			ponteiro -> proximo = NULL;
+		}
+	}
+	
+	return retorno;
+}
+
+// Funcao Principal de Execucao do Programa
+
+int main() {
+	printf("%d\n", remover());
+	printf("============\n");
+	
+	inserir(1);
+	printf("%d\n", remover());
+	printf("============\n");
+	
+	inserir(1);
+	inserir(2);
+	inserir(3);
+	inserir(4);
+	inserir(5);
+	printf("%d\n", remover());
+	printf("%d\n", remover());
+	printf("%d\n", remover());
+	printf("%d\n", remover());
+	printf("%d\n", remover());
+	printf("============\n");
+}
