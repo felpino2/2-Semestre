@@ -1,0 +1,72 @@
+// Programa que Implementa uma Pilha FIRST IN LAST OUT
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declaracao da Estrutura
+
+struct no {
+	int numero;
+	struct no *proximo;
+};
+
+// Declaracao de Variaveis
+
+struct no *cabeca = NULL; // Cabeca comeca a apontar para nulo, Cabeca sempre aponta para uma estrutura de memoria
+
+// Funcao que insere um No na PIlha
+
+void push(int numero) {
+	// Instanciacao da Memoria
+	struct no *novoNo = (struct no *) malloc(sizeof(struct no));
+	novoNo -> numero = numero; // novoNo recebe número
+	novoNo -> proximo = cabeca; // novoNo aponta para o mesmo lugar que a cabeca ta apontando que inicialmente, aponta para NULO, depois vai apontar de acordo com a linha de baixo
+	cabeca = novoNo; // Cabeca agora aponta para o Novo No
+}
+
+// Funcao que verifica o topo da Pilha 
+
+int top() {
+	int retorno = 0;
+	
+	if (cabeca != NULL) {
+		retorno = cabeca -> numero;
+	}
+	return retorno;
+}
+
+// Funcao que remove um no da pilha
+
+int pop() {
+	int retorno = 0;
+	
+	if (cabeca != NULL) {
+		retorno = cabeca -> numero;
+		struct no *temp = cabeca;
+		cabeca = cabeca -> proximo;
+		free(temp);
+	}
+	
+	return retorno;
+}
+
+int main() {
+	printf("%d\n", pop());
+	printf("============\n");
+	
+	push(1);
+	printf("%d\n", pop());
+	printf("============\n");
+	
+	push(1);
+	push(2);
+	push(3);
+	push(4);
+	push(5);
+	printf("%d\n", pop());
+	printf("%d\n", pop());
+	printf("%d\n", pop());
+	printf("%d\n", pop());
+	printf("%d\n", pop());
+	printf("============\n");
+}
