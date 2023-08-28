@@ -1,0 +1,12 @@
+def somalista(n): #RECURSIVIDADE
+    if n == []:
+        return 0
+    else:
+        return n[0] + somalista(n[1:])
+
+
+
+
+x = [3, 6, 7, 2, 1]
+resultado = somalista(x)
+print(resultado)
