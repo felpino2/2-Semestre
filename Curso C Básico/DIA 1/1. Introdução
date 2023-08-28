@@ -1,0 +1,33 @@
+// BIBLIOTECAS QUE USAREMOS:
+// #include <stdio.h> == Manipula entrada e saída input out
+// #include <stdlib.h> == Diversas operações, incluindo conversão, geração de números pseudo-aleatórios, alocação de memória, controle de processo, sinais, busca e ordenação.
+// #include <locale.h> == Possibilita o compilador a trabalhar com caracteres de várias linguagens, mas no locale tem que setar para linguagem
+/////////   setlocale(LC_ALL, "Portuguese"); 
+// #include <math.h> == Possibilita a realização de outras operações matemáticas tais como funções trigonométricas, logaritmos, potência e arredondamentos.
+
+
+#include <stdio.h>
+
+void main() //Void não retorna nenhum valor
+{
+    printf("Olá\n"); // \n quebra de linha, nova linha
+    printf("\t Mundo"); // \t para tab = 5 espaços
+}
+
+// int main()//retorna algum valor, neste caso int
+//  {
+//      return 0
+//  }
+
+// Declaracao de Variavel
+// int a = 3 (tipo Nome = Valor -> my_name, myNameIsWhat _m a12 
+              
+
+// char = 'o' = %c
+// int = 14, -14, 0xEEC0 = %d %i
+//float = 10.33 = %f %g   %.2f = por exemplo quantidade numeros apos a virgula
+// % RESTO
+//a-- = a = a-1 incremento
+//a++ = a = a+1 decremento
+// int v = 1
+// printf("%d", v);
