@@ -1,0 +1,21 @@
+#Busca Binária
+
+lista = []
+for i in range (100, 200): #Cria uma lista de 100 elementos que começa em 100 e termina em 199
+    lista.append(i)
+print(lista)
+
+want = 103
+
+inicio = 0
+final = 199
+
+while final >= inicio:
+    meio = (inicio + final)//2
+    if meio == want:
+        print("Achei")
+        break
+    if meio > want:
+        final = meio -1
+    if meio < want:
+        inicio = meio + 1
