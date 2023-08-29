@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+int X;
+printf("Digite um Número: ");
+scanf("%d", &X);
+
+if (X>5) {
+    printf("\n X é maior que 5");
+}
+
+}
+
+/////////////////////////////////////// EX 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+int X;
+printf("Digite um Numero: ");
+scanf("%d", &X);
+
+if (X != 10) {
+        X = 10;
+    printf("O numero agora e %d", X);
+} else {
+printf("Ta CERTO");
+}
+
+}
+
+////////////////////////////////// EX 3
+#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+int x;
+
+printf("Digite um numero ");
+scanf("%d", &x);
+
+if (x > 2){
+    printf("X e maior que dois");
+} else {
+printf("X e menor que dois");
+}
+
+}
+
+
+
