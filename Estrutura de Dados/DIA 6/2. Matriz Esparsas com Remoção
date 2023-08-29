@@ -1,0 +1,132 @@
+//Cache mantem uma copia de uma memoria que abre mais rapido
+
+// MATRIZES ESPARSAS
+
+// Cache de Memoria Secundaria
+// É uma estrutura dinamica que nao tem estrutura fisica
+// Cabeca apoonta para diretor que tem dois ponteiros um para o diretor de baixo e outro para um nó, eventualmente para nulo
+// Nó é matriz
+
+//Numero é dividio pelo módulo, usando o resto para colocar o numero no lugar certo
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declaração de Constantes
+
+const int MODULO = 5;
+
+//Declaração das Estruturas
+
+struct no{
+	int numero;
+	struct no *proximoNo;
+};
+
+struct diretor {
+	int resto; //Congruencia Modulo da Divisão que faremos, por exemplo se inserir o número 3, divide 3 por 5 e o resto é 3
+	struct no *proximoNo;
+	struct diretor *proximoDiretor;
+};
+
+// Declaração de Variáveis
+
+struct diretor *cabeca = NULL;
+
+// Funcao que procura ou cria diretor
+
+struct diretor *procurarDiretor(int restoProcurado){
+	struct diretor *ponteiro = cabeca;
+	
+	while ((ponteiro != NULL) && (ponteiro -> resto != restoProcurado)) { //Enquanto a cabeça não for vazia, e o resto apontado for diferente do resto procurado ele continuará
+		ponteiro = ponteiro -> proximoDiretor; //ele segue e vai para o próximo para testar novamente
+	}
+	
+	if (ponteiro == NULL){
+		ponteiro = (struct diretor *) malloc(sizeof(struct diretor)); // CRIOU UM DIRETOR
+		ponteiro -> resto = restoProcurado; // O RESTO DO DIRETOR É O RESTO QUE VOCÊ PROCURA
+		ponteiro -> proximoDiretor = cabeca; // APONTA O NOVODIRETOR CRIADO PARA O DIRETOR QUE A CABEÇA APONTA
+		ponteiro -> proximoNo = NULL; // ADICIONA NÓ NO FINAL 
+		cabeca = ponteiro; //CABECA AGORA É O NOVO PONTEIRO ADICIONADO
+	}
+	
+	return ponteiro;
+	
+}
+
+void inserir(int numero){
+	struct diretor *diretorCerto = procurarDiretor(numero % MODULO);
+	
+	struct no *novoNo = (struct no *) malloc(sizeof(struct no));
+	novoNo -> numero = numero; // 
+	novoNo -> proximoNo = diretorCerto -> proximoNo; // Diretor certo pode apontar por exemplo pra 3, então o Novo No apontará para o 3
+	diretorCerto -> proximoNo = novoNo; // O diretor agora apontará para o novo No
+}
+
+// Função que imprime Matriz Esparsa
+
+void imprimir() {
+	struct diretor *ponteiroDiretor = cabeca;
+	
+	printf("=======");
+	printf("Resto\n");
+	
+	while (ponteiroDiretor != NULL){
+	
+		printf("%d -> \t", ponteiroDiretor -> resto);
+		
+		struct no *ponteiroNo = ponteiroDiretor -> proximoNo;
+		
+		while (ponteiroNo != NULL) {
+			printf("%d \t", ponteiroNo -> numero);
+			ponteiroNo = ponteiroNo -> proximoNo;
+		}
+		printf("\n");
+		ponteiroDiretor = ponteiroDiretor -> proximoDiretor;
+	}
+}
+
+// FUNCAO PARA REMOVER
+
+void remover (int numero){
+
+	struct diretor *diretorCerto =procurarDiretor(numero % MODULO);
+
+	struct no *ponteiroAnterior;
+	struct no *ponteiroExcluir;
+	
+	if (diretorCerto -> proximoNo != NULL) {
+		if (diretorCerto -> proximoNo -> numero == numero) {
+			ponteiroExcluir = diretorCerto -> proximoNo;
+			diretorCerto -> proximoNo = diretorCerto -> proximoNo -> proximoNo;
+			free(ponteiroExcluir);
+		} else {
+			ponteiroAnterior = diretorCerto -> proximoNo;
+			while ((ponteiroAnterior -> proximoNo != NULL) && (ponteiroAnterior -> proximoNo -> numero != numero)){
+				ponteiroAnterior = ponteiroAnterior -> proximoNo;
+			}
+		}
+		if (ponteiroAnterior -> proximoNo != NULL) {
+			ponteiroExcluir = ponteiroAnterior -> proximoNo;
+			ponteiroAnterior -> proximoNo = ponteiroExcluir -> proximoNo;
+			free(ponteiroExcluir);
+		}
+	}
+	
+}
+
+
+int main() {
+	int i = 0;
+	
+	for (i = 0; i < 37 ; i++) {
+		inserir(i);
+	}
+	
+	imprimir();
+	
+	remover(7);
+	imprimir();
+	
+	
+}
