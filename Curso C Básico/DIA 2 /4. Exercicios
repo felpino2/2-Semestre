@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+int x;
+int incrementador;
+printf("Quantas vezes você quer repetir? ");
+scanf("%d", &x);
+
+comeco_loop:
+
+printf("\"Hello world\"\n");
+incrementador++;
+if (incrementador < x){
+goto comeco_loop;
+}
+
+}
+//////////////////////////
