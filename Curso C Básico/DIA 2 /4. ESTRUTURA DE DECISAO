@@ -1,0 +1,96 @@
+#include <stdio.h>
+int main() {
+  int x;
+  printf("X: ");
+  scanf("%d", &x);
+   int my_bool = x > 2 ? 1 : 0; // Se for maior, responde 1, caso contrário vai para a próxima condiçõa: 0
+   if(my_bool) printf("X eh maior que dois.");
+   else printf("X eh menor ou igual a dois.");
+}
+
+//////// TABELA ASCII
+
+#include <stdio.h>
+void main() {
+    char i = 'l';
+    printf("\n%d", i);
+}
+devolve 108, ou seja I = 108
+
+#include <stdio.h>
+void main() {
+    int i = 108;
+    printf("\n%c", i); // %c 
+}
+devolve I
+/////////////////////////////////////////////////////////////////////////
+// SWITCH CASE
+// switch(){case:}
+
+#include <stdio.h>
+void main() {
+int valor;
+ printf ("Digite um valor de 1 a 7: "); // TEM QUE SER APENAS UM VALOR FIXO EM CADA CASO, NÃO PODE COMPARAÇÃO
+ scanf("%d", &valor);
+ switch ( valor ){
+    case 1 :
+    printf ("Domingo\n");
+    break;
+   
+    case 2 :
+    printf ("Segunda\n");
+    break;
+   
+    case 3 :
+    printf ("Terça\n");
+    break;
+    case 4 :
+    printf ("Quarta\n");
+    break;
+   
+    case 5 :
+    printf ("Quinta\n");
+    break;
+   
+    case 6 :
+    printf ("Sexta\n");
+    break;
+   
+    case 7 :
+    printf ("Sabado\n");
+    break;
+   
+    default :
+    printf ("Valor invalido!\n");
+  }
+ 
+  return 0;
+}
+
+//////////////////////////////////////////////
+
+//////// GO TO:
+
+#include <stdio.h>
+ void main() {
+   int num = 1;
+   if (num == 1) {
+       goto ponto;
+   }
+   printf("Esta linha nao sera executada\n");
+ponto:  // rótulo(label)
+   printf("Esta linha sera executada\n");
+}
+
+1. #include <stdio.h>
+2. void main(){
+3.    int i = 0;
+4.    inicio_loop:
+5.    if (i < 5){
+6.        printf("Numero: %d\n",i);
+7.        i++;
+8.        goto inicio_loop;
+9.    }
+10. }
+
+
