@@ -53,7 +53,15 @@ If ( tirar == SS ) {
        printf("vou ficar satisfeito  
 } else { 
        printf("vou reprovar 
+} 
+if ( X==’S’ ) { 
+       Soma
+} else if ( X==’D’ ) {
+       Divisão 
+} else { 
+       Programa fechado! 
 }
+
 
 
 
