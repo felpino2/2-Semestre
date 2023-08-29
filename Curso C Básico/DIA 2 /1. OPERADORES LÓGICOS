@@ -1,0 +1,59 @@
+Não é TUDO Código 
+
+#include <stdio.h>
+void main() {
+    int v = 10;
+    int w = 3;
+    printf("v + w = %d\n", v + w);
+    // v + w =  13
+    printf("v - w = %d\n", v - w);
+    // v - w = 7
+    printf("v * w = %d\n", v * w);
+    // v * w = 30
+    printf("v / w = %d\n", v / w);
+    // 3.3333 = 3 por causa que é um int
+    printf("v % w = %d\n", v % w);
+    // 1
+    v=5;
+    printf("v = %d\nw = %d",v,w);
+    // v = 5
+    // w = 3
+    printf("v = %d\n", v+= 5);
+    // v = 10
+    printf("w = %d\n", w--);
+    // w = 2
+}
+
+
+
+
+// CASTING /////////////////////////////////////////
+
+O "casting" na linguagem de programação C é o processo de converter explicitamente o tipo de dado de uma variável de um tipo para outro. Ele permite alterar a interpretação dos dados armazenados em uma variável.
+(novo_tipo) expressão
+
+int a = 10;
+double b;
+
+
+b = (double)a;  // Casting explícito de int para double
+
+
+printf("Valor de b: %f\n", b);
+
+// IF ELSE ORDEM ////////////////////////////////////
+1. IF
+2. ELSE IF
+3. ELSE -> Não tem condição, é o que sobra
+
+
+If ( tirar == SS ) { 
+       printf("vou ficar muito feliz”)
+} else if (tirar == MS || tirar == MM ) {
+       printf("vou ficar satisfeito  
+} else { 
+       printf("vou reprovar 
+}
+
+
+
