@@ -1,5 +1,29 @@
 // Receba um valor em Real (R$) (float) e mostre a conversão para Dólar(5 R$) e Euro(5.2 R$).
 
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+    float real; //Cria uma variável float para armazenar o valor dado em Real
+
+    printf("Qual valor em real voce quer ver em Dolar e Euro ?\n");
+
+
+    scanf("%f", &real); // Recebe o valor dado pelo usuário e o armazena
+
+
+    // Poderia ter sido criado variáveis para armazenar a multiplicação referente a cada moeda, porém, é mais simples neste caso apenas multiplicar
+    // em cada printf
+
+    // Nos dois casos, o %.2f foi usado pois utilizando apenas %f, uma quantidade exorbitante de algarismos após a vírgula que não são necessários
+    //polui visualmente o dado que o usuário precisa receber, além de não importarem no caso real da moeda
+    printf("Este valor em DOLAR e %.2f\n", real * 5);
+
+
+    printf("Este valor em EURO e %.2f\n", real * 5.2);
+}
+
+
 
 
 
