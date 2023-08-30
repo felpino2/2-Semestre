@@ -59,4 +59,19 @@ int main(){
 
 ////////////////////////////////////////////////////////////
 
+EXEMPLO TABELA ASCII
+
+#include <stdio.h>
+
+char maiuscula(char x){
+   return (char)(x - 32);   // aqui temos um exemplo do uso do “casting”
+}
+
+void main(){
+   char x;
+   printf("Digite uma letra: ");
+   scanf("%c", &x);
+
+   printf("O resultado eh %c",  maiuscula(x));
+}
 
