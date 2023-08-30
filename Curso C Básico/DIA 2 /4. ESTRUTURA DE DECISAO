@@ -23,6 +23,8 @@ void main() {
     printf("\n%c", i); // %c 
 }
 devolve I
+
+SOMA 32 A vira a, SUBTRAI 32 a vira A
 /////////////////////////////////////////////////////////////////////////
 // SWITCH CASE
 // switch(){case:}
