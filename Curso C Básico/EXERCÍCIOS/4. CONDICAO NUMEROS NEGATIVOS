@@ -1,0 +1,23 @@
+// Faça um algoritmo que leia dois números inteiros e mostre o resultado da multiplicação entre eles, se ambos forem positivos; ou a soma, se pelo menos um deles for negativo.
+
+#include <stdio.h> // RECEBE DADOS DE ENTRADA E SAÍDA
+
+void main(){
+int x; // Cria duas variáveis para armazenar
+int y;
+
+// Receba e armazena as duas variáveis
+
+printf("Digite um numero inteiro\n");
+scanf("%d", &x);
+
+printf("Digite outro numero inteiro\n");
+scanf("%d",&y);
+
+if ((x < 0) || (y < 0)){ // Caso uma das variáveis seja menor do que zero, é feito a soma. Condição: x ser menor que zero OU y ser menor que zero, apenas uma precisa ser verdadeira
+    printf("A soma deles e %d", x+y);
+} else { // Caso ambas sejam falsas, ou seja, todos os números inteiros são positivos, faz a multiplicação
+printf("A multiplicacao deles e %d", x*y);
+}
+
+}
