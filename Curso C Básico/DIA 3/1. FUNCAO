@@ -1,0 +1,62 @@
+tipo_saida nome_funcao(tipo_entrada parametro){
+   /* ações c/ o valor do parametro */
+   return (tipo)resultado;  // colocar o tipo do resultado no return é opcional
+}
+
+OUUUU
+
+2 ª forma:
+nome_funcao(variavel_de_entrada)
+
+
+///////////////////EXEMPLO:
+#include <stdio.h>
+
+
+int add(int a, int b) {
+   return a + b;
+};
+
+
+void main() {
+   printf("Soma: %d\n", add(5, 7));
+}   
+#include <stdio.h>
+
+
+
+
+int add(int a, int b) {
+  return a + b;
+};
+
+
+
+
+int main() {
+  int x = add(5, 7);
+  printf("Soma: %d\n", x);
+  return 0;
+}
+
+
+
+///////////////////////////////// EXEMPLO 2
+
+#include <stdio.h>
+
+int quadrado (int a){
+   return a * a;
+}
+
+int main(){
+   int a;
+   printf("Digite um valor para a: ");
+   scanf("%d", &a);
+
+   printf("O quadrado de %d eh %d", a, quadrado(a));
+}
+
+////////////////////////////////////////////////////////////
+
+
