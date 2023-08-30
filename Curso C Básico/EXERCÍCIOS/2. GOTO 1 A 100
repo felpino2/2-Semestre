@@ -1,1 +1,21 @@
 // Crie um programa que exiba os números divisíveis por um até cem, utilizando a instrução 'goto'
+
+#include <stdio.h>
+
+void main(){
+int incrementador; // Cria um incrementador de número inteiro 0, que armazenará o número e a quantidade de vezes que passará pelo loop
+
+inicio_loop: // inicia um loop
+    if ((incrementador % 1 == 0) && (incrementador < 101)) { // caso o incrementador seja divisível por um (o que é o caso para todos os inteiros naturais), ele passará por esta condição. Só irá parar quando o incrementador for maior que 100, 
+                                                            //ou seja, encerra o loop no 101, contando até o número anterior à ele
+    
+    printf("%d e divisível por 1\n", incrementador); // Printa na tela, que este número é divisível por 1
+    
+    
+    incrementador++; // incrementa mais um ao incrementador, que será incrementado até o 101, e só aí parará o loop
+    
+    
+    goto inicio_loop; // caso a condição seja verdadeira, retorna ao loop, com o incrementador alterado, testando assim o incrementador + 1
+}
+}
+
