@@ -1,0 +1,39 @@
+// Elabore uma função que receba três notas de um aluno como parâmetro e uma letra. Se a letra for ‘A’ / ‘a’, a função deve calcular a média aritmética das notas do aluno; se a letra for ‘P’ / ‘p’, deverá calcular a média ponderada, com pesos 5, 3 e 2. Retorne a média calculada para o programa principal.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+float media(float a, float b, float c, char d) {
+    if ((d == 'A') || (d == 'a')) {
+
+        return (a+b+c)/3;
+
+    } else if ((d == 'P') || (d == 'p')) {
+
+       return (((a*5)+(b*3)+(c*2))/(5+3+2));
+
+    }
+}
+
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    float x;
+    float y;
+    float z;
+
+    char m;
+
+    printf("Digite A ou a para calcular a média aritmética, ou P ou p para Ponderada\n");
+    scanf("%c", &m);
+
+    printf("Qual o primeira nota? \n");
+    scanf("%f", &x);
+    printf("Qual o segunda nota? \n");
+    scanf("%f", &y);
+    printf("Qual é a terceira nota? \n");
+    scanf("%f", &z);
+
+    printf("A média é %.2f", media(x, y, z, m));
+}
