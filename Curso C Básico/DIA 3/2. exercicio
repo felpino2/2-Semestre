@@ -1,1 +1,23 @@
-//Faça uma função que aceita 2 inteiros e retorna a multiplicação.
+// Faça uma função que aceita 2 inteiros e retorna a multiplicação.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int multiplicacao(int a, int b) {
+return a*b;
+}
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    int x;
+    int y;
+
+    printf("Qual o primeiro número? \n");
+    scanf("%d", &x);
+    printf("Qual o segundo número? \n");
+    scanf("%d", &y);
+
+    printf("A multiplicação de %d com %d é %d", x, y, multiplicacao(x,y));
+
+}
