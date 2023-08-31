@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+
+int notas;
+int incrementador = 0;
+int soma = 0;
+
+while (notas != -1){
+    printf("Qual nota você quer inserir? ");
+    scanf("%d", &notas);
+
+    if (notas != -1){
+    incrementador++;
+    soma += notas;
+}
+}
+printf("A média de suas notas é: %d", soma/incrementador);
+
+}
