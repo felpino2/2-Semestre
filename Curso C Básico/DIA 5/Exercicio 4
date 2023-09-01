@@ -1,0 +1,32 @@
+//
+
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    for (int i = 0; i <= 10; i++)
+    printf("9 vezes %d igual a %d\n", i, 9*i);
+}
+
+
+/// TODAS AS TABUADAS ATÉ A TABUADA 
+
+//
+
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    int tabuada;
+    printf("Até qual tabuada você quer? \n");
+    scanf("%d", &tabuada);
+
+    for (int j =1; j<=tabuada; j++){
+        for (int i = 0; i <= 10; i++){
+            printf("%d vezes %d igual a %d\n", j, i, j*i);
+        }
+        printf("//////////\n");
+    }
+}
