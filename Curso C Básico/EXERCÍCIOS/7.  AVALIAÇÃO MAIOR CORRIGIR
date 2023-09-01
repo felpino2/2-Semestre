@@ -1,0 +1,26 @@
+// O professor aplicou a avaliação em sua turma e deseja selecionar a maior nota e sua respectiva frequência, ou seja, a quantidade de alunos que conseguiu a maior nota. Desenvolva o programa que leia a nota dos alunos e gere a tela de saída com as informações solicitadas.
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+float nota, maior;
+int frequencia;
+
+while  (nota != -1){
+printf("Insira uma nota, -1 para parar");
+scanf("%d", &nota);
+        if (nota == -1){
+        break;
+        }
+        if (nota > maior){
+            maior = nota;
+            frequencia = 0;
+        } else if (nota == maior){
+            frequencia++;
+        }
+}
+printf("A maior nota é %.2f", maior);
+printf("A frequência dessa nota é %d", frequencia);
+
+}
