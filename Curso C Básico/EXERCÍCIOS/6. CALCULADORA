@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+int soma(int a, int b){
+    return a+b;
+}
+int subtracao(int a, int b){
+    return a-b;
+}
+int multiplicacao(int a, int b){
+    return a*b;
+}
+
+int divisao(int a, int b){
+    return a/b;
+}
+
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+
+float n1, n2;
+char nc;
+
+printf("Qual número você quer colocar na calculadora?\n");
+scanf("%f", &n1);
+
+printf("Qual o outro número você quer colocar? \n");
+scanf("%f", &n2);
+
+printf("Qual o sinal você quer? +, -, * ou / ?\n");
+scanf(" %c", &nc);
+
+if (nc == '+'){
+    printf("%d", soma(n1, n2));
+}
+else if (nc == '-'){
+    printf("%d", subtracao(n1, n2));
+}
+else if (nc == '*'){
+    printf("%d", multiplicacao(n1, n2));
+}
+else {
+    printf("%d", divisao(n1, n2));
+}
+
+
+
+}
