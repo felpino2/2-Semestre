@@ -1,3 +1,4 @@
+//Faça uma calculadora que receba números inteiros e posteriormente a operação a ser feita com esses número e então retorne o resultado.
 #include <stdio.h>
 #include <locale.h>
 #include <stdlib.h>
