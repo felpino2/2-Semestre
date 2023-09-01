@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <locale.h>
+
+int multiplo2(int a){
+    if (a%2 == 0){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+int numero;
+    printf("Qual número inteiro você quer testar se é múltiplo de 2? \n");
+    scanf("%d", &numero);
+    if (multiplo2(numero) == 1){
+        printf("É múltiplo!");
+    } else {
+        printf("Não é múltiplo. ");
+    }
+
+}
