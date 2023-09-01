@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include<locale.h>
+
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+
+    int N;
+    int numero;
+
+    printf("Até qual número inteiro você quer ver? ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++){
+            printf("Qual número você quer? ");
+            scanf("%d", &numero);
+            if (numero < 1){
+                printf("1\n");
+            } else {
+                printf("%d\n", numero);
+            }
+    }
+
+}
