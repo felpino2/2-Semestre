@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<locale.h>
+
+
+float kmMs (float a){
+    return a/3.6;
+}
+
+float msKm (float a){
+    return a*3.6;
+}
+
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+
+    int opcao;
+    float numero;
+    char sn;
+
+    while (sn != 's') {
+        printf("Digite 1 para passar de km/h para m/s, ou 2 para passar de m/s para km/h \n");
+        scanf("%d", &opcao);
+
+        printf("Qual o valor você quer passar? \n");
+        scanf("%f", &numero);
+
+        if (opcao == 1){
+            printf("%.2f\n", kmMs(numero));
+        } else {
+            printf("%.2f\n", msKm(numero));
+        }
+
+        printf("Você quer finalizar o programa? Digite \"s\" para sim e \"n\" para não. \n");
+        scanf(" %c", &sn);
+        }
+
+}
