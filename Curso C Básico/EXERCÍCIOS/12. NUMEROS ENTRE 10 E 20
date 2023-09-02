@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+int numero;
+int contador = 0;
+
+for (int i = 0; i < 11; i++){
+    printf("Insira um número: \n");
+    scanf("%d", &numero);
+
+    if (numero < 21 && numero > 9){
+            contador++;
+        }
+    }
+printf("A quantidade de números entre 10 e 20 nesta lista foi %d", contador);
+
+}
