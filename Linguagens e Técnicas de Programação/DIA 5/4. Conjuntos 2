@@ -1,0 +1,17 @@
+#Conjuntos
+
+a = {1, 2, 3, 4, 5, 6}
+a.add (7)
+
+b ={2, 4, 6, 10}
+c = {1,2}
+
+
+print("C é subconjunto de a:", c.issubset(a))
+
+print("A diferença entre a e b", a.difference(b)) #a-b
+
+print("A união b", a.union(b))
+
+print("Diferença simérica entre a e b", a.symmetric_difference(b))
+print("8 pertence a a", 8 in a)
