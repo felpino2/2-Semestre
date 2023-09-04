@@ -1,0 +1,38 @@
+
+  
+d = {12: "manuel", 13: "pedro", 14: "izabela"}
+print(d)
+d.copy() ##Copia o dicionario
+
+print(d)
+print(d.keys())
+
+for i in range(len(d)):
+    print(i)
+
+for i in d:
+    print(i) #Printa os itens do dicionário
+
+print(d.values())
+
+d.clear() #limpa dicionário
+
+print(d)
+
+d1 = {45: "joaquim"}
+d.update(d1) #adicionou d1 ao d
+print(d)
+
+
+print(d.get(45))  #Pegou o valor da chave 45
+
+d[45] = "kkkk"  #Alterou o valor
+d[12] = "Felpino"
+d[15] = "GOGOGOOGO"
+
+print(d.get(12))
+print(d)
+
+d.popitem() #Remove o último item
+print(d)
+
