@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    int numero;
+    int maior;
+    int segundomaior;
+
+    for (int i = 0; i < 10; i++){
+        printf("Digite um número inteiro: \n");
+        scanf("%d", &numero);
+        if (maior < numero){ // CASO NORMAL
+            segundomaior = maior;
+            maior = numero;
+        } else if (numero > segundomaior){ // CASO FINAL, EM QUE O NÚMERO É MENOR QUE O MAIOR, MAS MENOR QUE O SEGUNDO MAIOR ARMAZENADO
+            segundomaior = numero;
+        }
+    }
+    printf("Maior %d, Segundo maior %d", maior, segundomaior);
+}
