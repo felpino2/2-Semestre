@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+    int limitsuperior = 0;
+    int incremento = 0;
+    float celsius;
+
+    printf("Qual o limite superior para ver o intervalo em F°? \n");
+
+
+    while (10 > limitsuperior){
+        printf("Deve ser maior ou igual a  10 \n");
+        scanf("%d", &limitsuperior);
+
+    }
+
+    printf("Qual o valor do incremento? \n");
+    scanf("%d", &incremento);
+
+    for (float i = 10; i <= limitsuperior; i+=incremento){
+        celsius = (i-32)*5/9;
+        printf("%.2f graus celsius\n", celsius);
+    }
+
+
+}
