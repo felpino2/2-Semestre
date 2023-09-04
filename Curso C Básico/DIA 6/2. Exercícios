@@ -1,0 +1,16 @@
+// VETORES
+
+#include <stdio.h>
+#include <locale.h>
+void main(){
+  setlocale(LC_ALL, "Portuguese");
+  int vetor[3];
+
+  for (int i = 0; i < 3; i++){
+    printf("Insira um valor \n");
+    scanf("%d", &vetor[i]);
+  }
+  for (int i = 0; i < 3; i++){
+    printf("%d\n", vetor[i]);
+  }
+}
