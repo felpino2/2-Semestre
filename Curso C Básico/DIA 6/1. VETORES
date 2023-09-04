@@ -1,0 +1,13 @@
+// VETORES 
+
+#include <stdio.h>
+void main(){
+   int n, vetor[5];
+   for(n = 0; n < 5; n++){
+       printf("Digite os valores a serem adicionados no vetor: ");
+       scanf("%d", &vetor[n]);
+   }
+   for(n = 0; n < 5; n++){
+       printf("vetor[%d]\n",vetor[n]);
+   }
+}
