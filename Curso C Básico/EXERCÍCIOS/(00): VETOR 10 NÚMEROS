@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+
+// ÍNDICE NÃO PODE SER FLOAT.
+
+void main(){
+    
+    setlocale(LC_ALL, "Portuguese");
+
+    float vetor[10];
+    float media = 0;
+
+    for (int n1 = 0; n1 < 10; n1++){
+
+        printf("Digite os valores desejados.");
+        scanf("%f", &vetor[n1]);
+        media += vetor[n1];
+
+    }
+
+    media /= 10;
+
+    for (int n1 = 0; n1 < 10; n1++){
+
+        printf("A média é: %.2f\n", media);
+
+    }
+}
