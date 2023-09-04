@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <locale.h>
+
+
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    int numero;
+    int numero2;
+    char cara;
+    int i = 0;
+
+for (;;){
+printf("Insira um número.\n");
+scanf("%d", &numero);
+
+printf("Insira outro número \n");
+scanf("%d", &numero2);
+
+printf("Selecione \n a = A soma dos números, \n b =  O produto do primeiro número pelo quadrado do segundo; \n c = O quadrado do primeiro número; \n d = O módulo do primeiro número. \n");
+scanf(" %c", &cara);
+
+if (cara == 'a'){
+    printf("%d", numero+numero2);
+    break;
+} else if (cara == 'b'){
+    printf("%d", numero*numero2*numero2);
+    break;
+} else if (cara == 'c') {
+    printf("%d", numero*numero);
+    break;
+} else if (cara == 'd'){
+    if (numero < 0){
+        printf("%d", numero*(-1));
+        break;
+    } else {
+    printf("%d", numero);
+    break;
+    }
+} else {
+    printf("Inválido. ");
+    }
+}
+
+}
