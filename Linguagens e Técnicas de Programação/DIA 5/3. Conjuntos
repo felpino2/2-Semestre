@@ -1,0 +1,17 @@
+#Conjuntos
+
+c = set() #CONJUNTO
+c1 = {} #DICIONÁRIO VAZIO
+c2 = {1, 2, 2,  3, 4} #CONJUNTO ---> REMOVE ELEMENTO REPETIDO
+c3 = {1, 2, 3, 4, 5}
+
+print(type(c))
+print(c)
+
+c.add(12)
+
+print("Conjunto C:", c)
+
+print("Diferença entre c2 e c3")
+c3 = c3.difference(c2) #VAI DAR 5
+print(c
