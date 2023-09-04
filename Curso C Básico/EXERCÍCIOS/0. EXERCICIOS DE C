@@ -1,0 +1,98 @@
+//Faça uma função que transforme uma letra minúscula em maiúscula e printe a letra no após a função.
+
+#include <stdio.h>
+#include <locale.h>
+
+char maiscula(char minuscula){
+    return minuscula-32;
+}
+
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+
+char letra;
+
+printf("Qual letra você quer transformar em maiúscula? \n");
+scanf(" %c", &letra);
+
+printf(" %c", maiscula(letra));
+
+
+}
+
+
+// Receba um número e quantos números pares de 1 até ele (incluindo ele), a soma dos ímpares até ele e ele negativo e printe esses dados.
+
+
+#include <stdio.h>
+#include <locale.h>
+
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+
+int numero;
+int qntdpares = 0;
+int somaimpares = 0;
+
+printf("Insira número\n");
+scanf("%d", &numero);
+
+for(int i = 1; i <= numero; i++){
+        if (i%2 == 0){
+            qntdpares++;
+        } else {
+            somaimpares += i;
+        }
+    }
+printf("A quantidade de números pares é %d, a soma dos números impares é %d e ele negativo é: %d", qntdpares, somaimpares, numero-(numero*2));
+
+}
+
+
+// Função que descubra se o número é primo
+
+
+#include <stdio.h>
+#include <locale.h>
+
+int primo(int numero){
+
+int eprimo = 0;
+int qntd_divisores = 0;
+
+    if (numero == 1){
+        eprimo = 1;
+    }
+
+    for (int i = 2; i <= numero; i++){
+        if (numero%i == 0) {
+            qntd_divisores++;
+        }
+    }
+
+    if (qntd_divisores == 1){
+        eprimo = 1;
+    }
+
+    return eprimo;
+}
+
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+
+int numero;
+
+printf("Qual número você quer ver se é primo? \n");
+scanf("%d", &numero);
+
+if (primo(numero) == 1) {
+    printf("Este número é primo. ");
+} else {
+    printf("Este número não é primo. ");
+}
+
+
+}
