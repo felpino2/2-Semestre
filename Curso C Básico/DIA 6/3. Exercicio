@@ -1,0 +1,25 @@
+// VETORES
+
+#include <stdio.h>
+#include <locale.h>
+void main(){
+  setlocale(LC_ALL, "Portuguese");
+  int vetor[4];
+  float soma = 0;
+  int acimaMedia = 0;
+
+  for(int i = 0; i < 4; i++){
+    printf("Qual valor você quer adicionar ao indice \n");
+    scanf("%d", &vetor[i]);
+    soma += vetor[i];
+  }
+float media = soma/4;
+printf("%.2f", media);
+
+for(int i = 0; i < 4; i++){
+    if (vetor[i]>media){
+        acimaMedia++;
+    }
+}
+printf("Acima é %d", acimaMedia);
+}
