@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+    
+setlocale( LC_ALL, "Portuguese");
+    
+int n1 = 0;
+int fim = 0;
+int contador = 1;
+
+printf("Insira o número de linhas.\n");
+scanf("%d", &n1);
+
+fim = n1*(n1+1)/2;
+
+for (int i = 1; i <= fim; i++){
+   if (i == 1){
+        
+            printf("%d\n", i);
+            contador++;
+            
+        } else if (contador*(contador+1)/2 == i) {
+            
+            printf("%d\n", i);
+            contador++;
+            
+    } else {
+        
+        printf("%d ", i);
+        
+    }
+    
+    }
+    
+}
