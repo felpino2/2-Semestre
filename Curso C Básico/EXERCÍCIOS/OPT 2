@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+
+setlocale( LC_ALL, "Portuguese");
+int n;
+int valorfibo = 1;
+int anterior = 1;
+int contador = 0;
+
+printf("Até qual indice?\n");
+scanf("%d", &n);
+
+while (contador != n){
+
+        if (contador == 0){
+            printf("%d\n", valorfibo);
+            contador++;
+
+        } else {
+            printf("%d\n", valorfibo);
+            valorfibo = valorfibo + anterior;
+            anterior = valorfibo - anterior;
+            contador++;
+            }
+
+        }
+
+    }
+
+
+
