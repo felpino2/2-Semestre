@@ -32,7 +32,7 @@ for (i =0; i < 2; i++){
     }
 }
 
-if (contador == i+j) {
+if (contador == i*j) {
     printf("Matrizes são iguais");
 } else {
     printf("Matrizes são diferentes");
