@@ -1,1 +1,20 @@
+// Constantes são usadas para armazenar valores que NÃO podem ser modificadas durante a execução de um programa.
+			#define <nome_da_constante> <valor>
+
+//As vantagens de usar o Define é facilitar a modificação dos códigos e os tornam mais legíveis.
+
+// A declaração da constante deve ser feita no início do programa.
+
+#include <stdio.h>
+#include <conio.h>
+#define ICMS 0.18;   //declaração da constante
+int main(){
+float preco_produto, valor_icms;
+printf("Informe o valor do produto: " );
+scanf("%f", &preco_produto);
+valor_icms = preco_produto * ICMS;
+printf("Valor de imposto a ser pago: R$ %.2f",valor_icms );
+getch();
+return 0;
+}
 
