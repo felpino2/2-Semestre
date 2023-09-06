@@ -1,0 +1,21 @@
+#include <stdio.h>
+void main(){
+   int matriz[2][3];
+   int i, j;
+// preenchimento da matriz
+   for (i = 0; i < 2; i++){
+       for (j = 0; j < 3; j++){
+           printf("matriz[%d][%d] = ",i,j);
+           scanf("%d", &matriz[i][j]);
+       }
+   }
+
+
+// impressão da matriz
+   for (i = 0; i < 2; i++){
+   	for (j = 0; j < 3; j++){
+       		printf("%d\t", matriz[i][j]);
+       	}
+   	printf("\n");
+   }
+}
