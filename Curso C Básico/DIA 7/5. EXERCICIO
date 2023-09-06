@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main() {
+setlocale(LC_ALL, "Portuguese");
+
+int i, j;
+int matriz[2][2];
+int matriz2[2][2];
+
+for (i =0; i < 2; i++){
+    for (j=0; j < 2; j++){
+        printf("Digite o elemento da linha %d e coluna %d \n", i, j);
+        scanf("%d", &matriz[i][j]);
+    }
+}
+
+for (i =0; i < 2; i++){
+    for (j=0; j < 2; j++){
+        printf("Digite o elemento 2 da linha %d e coluna %d \n", i, j);
+        scanf("%d", &matriz2[i][j]);
+    }
+}
+
+
+for (i =0; i < 2; i++){
+    for (j=0; j < 2; j++){
+        printf("[%d] ", matriz[i][j]-matriz2[i][j]);
+    }
+    printf("\n");
+}
+
+
+}
