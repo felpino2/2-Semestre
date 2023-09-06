@@ -1,4 +1,8 @@
 // Para usar com switch case com mais facilidade
+// É um tipo de dado definido pelo usuário que define uma variável que vai receber apenas um conjunto restrito de valores. Na realidade, um enum é um conjunto de valores inteiros representados por identificadores.
+// enum nomeEnum {elemento1, elemento2, …} nomeVariavel;
+// 
+Por padrão o primeiro valor de uma enum é inicializado com zero. Mas é possível determinar o valor inicial, basta declarar o primeiro valor para o identificador, e os valores seguintes serão automaticamente calculados com um incremento de uma unidade.
 
 #include <stdio.h>
 enum diaSemana {domingo, segunda, terca, quarta, quinta, sexta} dias;
