@@ -1,0 +1,6 @@
+#include <stdio.h>
+enum diaSemana {domingo, segunda, terca, quarta, quinta, sexta} dias;
+void main () {
+   printf("Exibindo conteudo da enum\n");
+   printf("%d %d %d %d %d %d %d", domingo, segunda, terca, quarta, quinta, sexta);
+}
