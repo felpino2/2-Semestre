@@ -35,6 +35,9 @@ def menu():
       if int(op) == 7:
          
 
+      if int(op) == 8:
+         
+
 
 def criaLista():
    l = []
@@ -79,5 +82,11 @@ def imprimeDic(dic);
    time.sleep(4)
 
 
-def  
+def  alteraNota(aluno):
+   nome = input ('Digite o nome do aluno: ')
+   nota = float(input('Digite a nota: '))
+
+   aluno[nome] = nota
+
+   return aluno
 
