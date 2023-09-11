@@ -82,7 +82,7 @@ def imprimeDic(dic);
    time.sleep(4)
 
 
-def  alteraNota(aluno):
+def alteraNota(aluno):
    nome = input ('Digite o nome do aluno: ')
    nota = float(input('Digite a nota: '))
 
