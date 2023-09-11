@@ -15,3 +15,17 @@ int main() {
 // & é o endereço, * devolve o valor
 // & aponta para o endereço(&i, &p apontam coisas diferentes), p sozinho para o endereço que ele está apontando (&i), p também aponta para o endereço, *p é o valor de i
 // *p = pessoa -> idade (APONTA PARA O IDADE QUE ESTÁ CONTIDO NA STRUCT PESSOA
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <stdio.h>
+int main() {
+   int num, valor;
+   int *p;
+   num = 55;
+   p = &num;
+   valor = *p;
+   printf("Endereco para onde o ponteiro aponta: %p\n", p);
+   printf("Endereco da variavel num: %p\n", &num);
+   printf("Valor da variavel apontada: %d\n", *p);
+   printf("Valor: %d\n", valor);
+   return 0;
+}
