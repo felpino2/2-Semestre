@@ -11,7 +11,7 @@ def menu():
       op = input("Escolha uma opção: ") #op de option
 
 
-      if op == 'sair or int(op) == 0:
+      if op == 'sair' or int(op) == 0:
          break
       
       if int(op) == 1:
