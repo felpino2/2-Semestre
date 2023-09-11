@@ -10,4 +10,4 @@ int main() {
    printf("Endereco do ponteiro p: %p\n", &p); //////////////// ENDEREÇO DIFERENTE
    return 0;
 }
-// *p = **j ponteiro apontando pra ponteiro
+// *p = **j ponteiro apontando pra ponteiro  SEMPRE DA ESQUERDA PRA DIREITA p = &i; p é um apelido de i
