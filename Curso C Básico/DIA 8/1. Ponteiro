@@ -4,7 +4,7 @@ int main() {
    i = 10;
    p = &i;
    printf("Valor armazenado no int. que p aponta\n");
-   printf("%d\n", *p);           /////////// IGUAL A 10
+   printf("%d\n", *p);           /////////// IGUAL A 10 - valor contido em p
    printf("Endereco da variavel i: %p\n", p);  ///////////////// ENDEREÇO
    printf("Endereco da variavel i: %p\n", &i); ///////////////// ENDEREÇO IGUAL AO DE CIMA
    printf("Endereco do ponteiro p: %p\n", &p); //////////////// ENDEREÇO DIFERENTE
