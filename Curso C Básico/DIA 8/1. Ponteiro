@@ -5,9 +5,9 @@ int main() {
    p = &i;
    printf("Valor armazenado no int. que p aponta\n");
    printf("%d\n", *p);           /////////// IGUAL A 10 - valor contido em p
-   printf("Endereco da variavel i: %p\n", p);  ///////////////// ENDEREÇO ---- %p para heaxdecimal, %d para decimal, tambem funciona
+   printf("Endereco da variavel i: %p\n", p);  ///////////////// ENDEREÇO ---- %p para heaxdecimal, %d para decimal, tambem funciona ENDEREÇO QUE P ESTÁ APONTANDO
    printf("Endereco da variavel i: %p\n", &i); ///////////////// ENDEREÇO IGUAL AO DE CIMA
-   printf("Endereco do ponteiro p: %p\n", &p); //////////////// ENDEREÇO DIFERENTE, O ENDEREÇO PRÓPRIO
+   printf("Endereco do ponteiro p: %p\n", &p); //////////////// ENDEREÇO DIFERENTE, O ENDEREÇO PRÓPRIO, ENDEREÇO DE P
    return 0;
 }
 // *p = **j ponteiro apontando pra ponteiro  SEMPRE DA ESQUERDA PRA DIREITA p = &i; p é um apelido de i
