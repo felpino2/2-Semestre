@@ -21,7 +21,7 @@ def menu():
          l = lst.reverse()
       
       if int(op) == 3:
-         pass
+         prod = produtoLista(lst)
       
       if int(op) == 4:
          imprimeLista(lst)
@@ -39,4 +39,8 @@ def imprimeLista(Lista):
    print(Lista)
    time.sleep(5)
 
-
+def produtoLista(Lista):
+   if len(lst) == 0:
+      return 1
+   else:
+      return lst[0] * produtoLista(lst[1:])
