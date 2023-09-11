@@ -7,7 +7,7 @@ def menu():
       print('5. CRIAR UM DICIONÁRIO DE n ALUNOS COM SUAS RESPECTIVAS NOTAS')
       print('6. IMPRIMIR OS ALUNOS COM SUAS NOTAS')
       print('7. ALTERAR A NOTA DE UM ALUNO DO DICIONÁRIO')
-      print('8. RETORNAR UMA LISTA DOS ELEMENTOS REPETIDOS DE DUAS LISTAS')
+      print('8. RETORNAR UMA LISTA DOS ELEMENTOS REPETIDOS DE DUAS LISTAS (OBTER AS DUAS LISTAS)')
       op = input("Escolha uma opção: ") #op de option
 
 
@@ -25,7 +25,17 @@ def menu():
       
       if int(op) == 4:
          imprimeLista(lst)
-      
+
+      if int(op) == 5:
+         d = criaDic(4)
+
+      if int(op) == 6:
+         imprimeDic(d)
+
+      if int(op) == 7:
+         
+
+
 def criaLista():
    l = []
    x = int(input("Quantos elementos?"))
@@ -35,12 +45,39 @@ def criaLista():
       x = x-1
    return(l)
 
+
 def imprimeLista(Lista):
    print(Lista)
    time.sleep(5)
+
 
 def produtoLista(Lista):
    if len(lst) == 0:
       return 1
    else:
       return lst[0] * produtoLista(lst[1:])
+
+
+def criaDic():
+   dic = {}
+   x = int(input("Quantos elementos para o Dicionário? ))
+
+   while x>0:
+      elemento = int(input('Digite o {} elemento da Lista ', format(x)))
+      nome = input("Digite o nome do aluno:")
+      nota = float("Digite a nota do aluno: ")
+
+      dic.get(nome)
+      dic[nome] = nota
+      x -= 1
+
+   return(dic)
+
+
+def imprimeDic(dic);
+   print(dic)
+   time.sleep(4)
+
+
+def  
+
