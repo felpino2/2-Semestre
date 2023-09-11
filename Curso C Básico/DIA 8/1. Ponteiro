@@ -11,3 +11,7 @@ int main() {
    return 0;
 }
 // *p = **j ponteiro apontando pra ponteiro  SEMPRE DA ESQUERDA PRA DIREITA p = &i; p é um apelido de i
+
+// & é o endereço, * devolve o valor
+// & aponta para o endereço(&i, &p apontam coisas diferentes), p sozinho para o endereço que ele está apontando (&i), p também aponta para o endereço, *p é o valor de i
+// *p = pessoa -> idade (APONTA PARA O IDADE QUE ESTÁ CONTIDO NA STRUCT PESSOA
