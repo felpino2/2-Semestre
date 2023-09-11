@@ -1,12 +1,42 @@
-print('1. CRIAR LISTA DE INTEIRO E INSERIR n ELEMENTOS')
-print('2. INVERTER A LISTA DE INTEIROS')
-print('3. RETORNAR O PRODUTO DOS ELEMENTOS DA LISTA CRIADA(RECURSIVA)')
-print('4. IMPRIMIR A LISTA')
-print('5. CRIAR UM DICIONÁRIO DE n ALUNOS COM SUAS RESPECTIVAS NOTAS')
-print('6. IMPRIMIR OS ALUNOS COM SUAS NOTAS')
-print('7. ALTERAR A NOTA DE UM ALUNO DO DICIONÁRIO')
-print('8. RETORNAR UMA LISTA DOS ELEMENTOS REPETIDOS DE DUAS LISTAS')
+def menu():
+   while True:
+      print('1. CRIAR LISTA DE INTEIRO E INSERIR n ELEMENTOS')
+      print('2. INVERTER A LISTA DE INTEIROS')
+      print('3. RETORNAR O PRODUTO DOS ELEMENTOS DA LISTA CRIADA(RECURSIVA)')
+      print('4. IMPRIMIR A LISTA')
+      print('5. CRIAR UM DICIONÁRIO DE n ALUNOS COM SUAS RESPECTIVAS NOTAS')
+      print('6. IMPRIMIR OS ALUNOS COM SUAS NOTAS')
+      print('7. ALTERAR A NOTA DE UM ALUNO DO DICIONÁRIO')
+      print('8. RETORNAR UMA LISTA DOS ELEMENTOS REPETIDOS DE DUAS LISTAS')
+      op = input("Escolha uma opção: ") #op de option
 
 
-if op == 'sair or int(op) == 0:
-   break
+      if op == 'sair or int(op) == 0:
+         break
+      
+      if int(op) == 1:
+         lst = criaLista()
+      
+      if int(op) == 2:
+         l = lst.reverse()
+      
+      if int(op) == 3:
+         pass
+      
+      if int(op) == 4:
+         imprimeLista(lst)
+      
+def criaLista():
+   l = []
+   x = int(input("Quantos elementos?"))
+
+   while x > 0:
+      elemento = int(input('Digite o elemento () da lista ', format(x)))
+      x = x-1
+   return(l)
+
+def imprimeLista(Lista):
+   print(Lista)
+   time.sleep(5)
+
+
