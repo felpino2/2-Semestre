@@ -115,7 +115,7 @@ def terceiraLista():
    return (l, l1)
 
 
-def retornaRepete:
+def retornaRepete(lst):
    l1 = lst[0]
    l2 = lst[1]
 
