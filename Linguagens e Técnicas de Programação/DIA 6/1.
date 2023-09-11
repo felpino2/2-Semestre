@@ -33,10 +33,17 @@ def menu():
          imprimeDic(d)
 
       if int(op) == 7:
-         
+         d1 = alteraNota(d)
+         imprimeDic(d1)
+         time.sleep(4)
 
       if int(op) == 8:
-         
+         lst = terceiraLista()
+         for i in lst:
+            print(i)
+         time.sleep(5)
+         print('A lista 3 é:', retornaRepete(lst)
+         time.sleep(5)
 
 
 def criaLista():
@@ -89,4 +96,47 @@ def alteraNota(aluno):
    aluno[nome] = nota
 
    return aluno
+
+def terceiraLista():
+   l = []
+   l1 = []
+
+   x = int(input('Quantos elementos para lista 1 ?')
+   while x > 0:
+      i = int(input('Digite o {} elemento pra lista 1: ', format(x)))
+      l.append(i)
+      x -= 1
+
+   x = int(input('Quantos elementos para lista 2 ?')
+   while x > 0:
+      i = int(input('Digite o {} elemento pra lista 1: ', format(x)))
+      l1.append(i)
+      x -= 1 
+   return (l, l1)
+
+def retornaRepete:
+   l1 = lst[0]
+   l2 = lst[1]
+
+   print(l1)
+   print(l2)
+   
+   time.sleep(3)
+   l3 = []
+   
+   if 1 in lst[0]
+      print(lst[1])
+      time.sleep(5)
+   
+   i = 0
+   
+   while i < len(l2):
+      j = 0
+      while j < len(l1):
+         if l1[j] == l2 [i]:
+            l3.append(l2[i])
+            break
+         j += 1
+      i += 1
+   return(l3)
 
