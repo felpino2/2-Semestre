@@ -10,3 +10,4 @@ int main() {
    printf("Endereco do ponteiro p: %p\n", &p); //////////////// ENDEREÇO DIFERENTE
    return 0;
 }
+// *p = **j ponteiro apontando pra ponteiro
