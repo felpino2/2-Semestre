@@ -1,0 +1,4 @@
+// ORDEM QUANTIDADE MÁXIMA DE FILHOS -- NÃO MUDA NUNCA
+// ALTURA SÃO OS NÍVEIS -- MUDA AO LONGO DO PROGRAMA
+// 
+// programa construção árvore ordem 5, sorteio para criação dos nós, navegação
