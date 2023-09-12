@@ -1,8 +1,3 @@
-// ORDEM QUANTIDADE MÁXIMA DE FILHOS -- NÃO MUDA NUNCA
-// ALTURA SÃO OS NÍVEIS -- MUDA AO LONGO DO PROGRAMA
-// 
-// programa construção árvore ordem 5, sorteio para criação dos nós, navegação
-
 //////////////////////////// PROGRAMA QUE IMPLEMENTA UMA ÁRVORE DE ORDEM 5
 
 #include <stdio.h>
@@ -24,7 +19,9 @@ struct no {
 
 ////////////////// DECLARAÇÃO DE VARIÁVEIS
 
+
 struct no *raiz = NULL; // PONTEIRO RAIZ APONTA PARA STRUCT NÓ, que nasce apontando pra NADA
+time_t t;
 
 // FUNÇÃO QUE INSERE NÓ NA ÁRVORE
 
@@ -41,9 +38,6 @@ struct no *inserir(struct no *raiz, int numero) { // Devolve um ponteiro inserir
         raiz -> filho5 = NULL;
     } else{
         // Caso Dificil: sortear um filho para inserir na árvore
-
-       // time_t t;
-       // srand((unsigned) time (&t));
 
         int sorteio = rand() % 5;
 
@@ -86,14 +80,17 @@ void imprimir (struct no *raiz, char *endentador){
 // FUNÇÃO PRINCIPAL DE EXECUÇÃO DO PROGRAMA
 
 int main() {
+    srand((unsigned) time(&t));
+
     char *endentador = (char *) malloc(sizeof(1024));
     strcpy(endentador, "");
 
     int i = 0;
 
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < 1000; i++) {
         raiz = inserir(raiz, i);
     }
 
     imprimir(raiz, endentador);
 }
+
