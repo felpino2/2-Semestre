@@ -1,30 +1,55 @@
 #include <stdio.h>
+#include <locale.h>
 
 int main(){
+setlocale(LC_ALL, "Portuguese");
 
 int matriz1[3][2];
 int matriz2[3][2];
 int matriz3[3][2];
 
-for (int i = 0; i < 3; i++){
-    for (int j = 0; j < 2; j++){
-        printf("Qual o termo [%d][%d] da 1\n", i, j);
-        scanf("%d", &matriz1[i][j]);
+int n;
+int n2;
+int f;
+int f2;
+
+printf("Quantas linhas terá a matriz 1? \n");
+scanf("%d", &n);
+
+printf("Quantas colunas terá a matriz 1? \n");
+scanf("%d", &n2);
+
+printf("Quantas linhas terá a matriz 2? \n");
+scanf("%d", &f);
+
+printf("Quantas colunas terá a matriz 2? \n");
+scanf("%d", &f2);
+
+if (n != f || n2 != f2){
+    printf("Não é possível realizar a soma.\n");
+} else {
+
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n2; j++){
+            printf("Qual o termo [%d][%d] da 1\n", i, j);
+            scanf("%d", &matriz1[i][j]);
+        }
     }
-}
-for (int i = 0; i < 3; i++){
-    for (int j = 0; j < 2; j++){
-        printf("Qual o termo [%d][%d] da 2\n", i, j);
-        scanf("%d", &matriz2[i][j]);
-        matriz3[i][j] = matriz1[i][j] + matriz2[i][j];
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n2; j++){
+            printf("Qual o termo [%d][%d] da 2\n", i, j);
+            scanf("%d", &matriz2[i][j]);
+            matriz3[i][j] = matriz1[i][j] + matriz2[i][j];
+        }
     }
-}
-for (int i = 0; i < 3; i++){
-    for (int j = 0; j < 2; j++){
-        printf("[%d] ", matriz3[i][j]);
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n2; j++){
+            printf("[%d] ", matriz3[i][j]);
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
+}
 
 }
