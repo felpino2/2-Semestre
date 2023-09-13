@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+
+char nome[] = { "aana" };
+
+int i = 0;
+int len = strlen(nome) - 1;
+
+while (len > 1){
+    if (nome[i++] != nome [len--]){
+        printf("NÃO É PALÍNDROMO");
+        return 0;
+    }
+}
+
+printf("É PALÍNDROMO");
+return 0;
+
+}
