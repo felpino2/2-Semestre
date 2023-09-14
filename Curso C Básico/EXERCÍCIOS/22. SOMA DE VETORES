@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <locale.h>
+
+void main(){
+setlocale(LC_ALL, "Portuguese");
+
+int n = 0;
+
+printf("Qual o tamanho do vetor\n");
+scanf("%d", &n);
+
+int vetor1[n];
+int vetor2[n];
+
+int vetor3[n];
+
+for (int i = 0; i < n; i++){
+    printf("Qual o valor %d do vetor 1? \n", i);
+    scanf("%d", &vetor1[i]);
+
+    printf("Qual o valor %d do vetor 2? \n", i);
+    scanf("%d", &vetor2[i]);
+
+    vetor3[i] = (vetor1[i]+vetor2[i]);
+}
+
+for (int i = 0; i < n; i++){
+    printf("%d ", vetor3[i]);
+}
+
+}
