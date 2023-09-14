@@ -4,14 +4,15 @@
 int main(){
 setlocale(LC_ALL, "Portuguese");
 
-int matriz1[3][2];
-int matriz2[3][2];
-int matriz3[3][2];
-
 int n;
 int n2;
 int f;
 int f2;
+
+int matriz1[n][n2];
+int matriz2[n][n2];
+int matriz3[n][n2];
+
 
 printf("Quantas linhas terá a matriz 1? \n");
 scanf("%d", &n);
@@ -52,4 +53,3 @@ if (n != f || n2 != f2){
 
 }
 
-}
