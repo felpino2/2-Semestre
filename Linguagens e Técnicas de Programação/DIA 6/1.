@@ -70,7 +70,7 @@ def produtoLista(Lista):
 
 def criaDic():
    dic = {}
-   x = int(input("Quantos elementos para o Dicionário? ))
+   x = int(input("Quantos elementos para o Dicionário?" ))
 
    while x>0:
       elemento = int(input('Digite o {} elemento da Lista ', format(x)))
