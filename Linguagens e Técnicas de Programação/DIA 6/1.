@@ -1,143 +1,149 @@
+import os
+import time
+
 def menu():
-   while True:
-      print('1. CRIAR LISTA DE INTEIRO E INSERIR n ELEMENTOS')
-      print('2. INVERTER A LISTA DE INTEIROS')
-      print('3. RETORNAR O PRODUTO DOS ELEMENTOS DA LISTA CRIADA(RECURSIVA)')
-      print('4. IMPRIMIR A LISTA')
-      print('5. CRIAR UM DICIONÁRIO DE n ALUNOS COM SUAS RESPECTIVAS NOTAS')
-      print('6. IMPRIMIR OS ALUNOS COM SUAS NOTAS')
-      print('7. ALTERAR A NOTA DE UM ALUNO DO DICIONÁRIO')
-      print('8. RETORNAR UMA LISTA DOS ELEMENTOS REPETIDOS DE DUAS LISTAS (OBTER AS DUAS LISTAS)')
-      op = input("Escolha uma opção: ") #op de option
+    while True:
+        os.system('cls')
+        print('1. CRIAR LISTA DE INTEIRO E INSERIR n ELEMENTOS')
+        print('2. INVERTER A LISTA DE INTEIROS')
+        print('3. RETORNAR O PRODUTO DOS ELEMENTOS DA LISTA CRIADA(RECURSIVA)')
+        print('4. IMPRIMIR A LISTA')
+        print('5. CRIAR UM DICIONÁRIO DE n ALUNOS COM SUAS RESPECTIVAS NOTAS')
+        print('6. IMPRIMIR OS ALUNOS COM SUAS NOTAS')
+        print('7. ALTERAR A NOTA DE UM ALUNO DO DICIONÁRIO')
+        print('8. RETORNAR UMA LISTA DOS ELEMENTOS REPETIDOS DE DUAS LISTAS (OBTER AS DUAS LISTAS)')
+        op = input("Escolha uma opção: ")  # op de option
 
+        if op == 'sair' or int(op) == 0:
+            break
 
-      if op == 'sair' or int(op) == 0:
-         break
-      
-      if int(op) == 1:
-         lst = criaLista()
-      
-      if int(op) == 2:
-         l = lst.reverse()
-      
-      if int(op) == 3:
-         prod = produtoLista(lst)
-      
-      if int(op) == 4:
-         imprimeLista(lst)
+        if int(op) == 1:
+            lst = criaLista()
 
-      if int(op) == 5:
-         d = criaDic(4)
+            
+        if int(op) == 2:
+            l = lst.reverse()
 
-      if int(op) == 6:
-         imprimeDic(d)
+        if int(op) == 3:
+            prod = produtoLista(lst)
 
-      if int(op) == 7:
-         d1 = alteraNota(d)
-         imprimeDic(d1)
-         time.sleep(4)
+        if int(op) == 4:
+            imprimeLista(lst)
 
-      if int(op) == 8:
-         lst = terceiraLista()
-         for i in lst:
-            print(i)
-         time.sleep(5)
-         print('A lista 3 é:', retornaRepete(lst)
-         time.sleep(5)
+        if int(op) == 5:
+            d = criaDic(lst)
+
+        if int(op) == 6:
+            imprimeDic(d)
+
+        if int(op) == 7:
+            d1 = alteraNota(d)
+            imprimeDic(d1)
+            time.sleep(4)
+
+        if int(op) == 8:
+            lst = terceiraLista()
+            for i in lst:
+                print(i)
+            time.sleep(5)
+            print('A lista 3 é:', retornaRepete(lst))
+            time.sleep(5)
 
 
 def criaLista():
-   l = []
-   x = int(input("Quantos elementos?"))
+    l = []
+    x = int(input("Quantos elementos?"))
 
-   while x > 0:
-      elemento = int(input('Digite o elemento () da lista ', format(x)))
-      x = x-1
-   return(l)
+    while x > 0:
+        elemento = int(input('Digite o elemento () da lista ', format(x)))
+        x = x - 1
+    return (l)
 
 
 def imprimeLista(Lista):
-   print(Lista)
-   time.sleep(5)
+    print(Lista)
+    time.sleep(5)
 
 
-def produtoLista(Lista):
-   if len(lst) == 0:
-      return 1
-   else:
-      return lst[0] * produtoLista(lst[1:])
+def produtoLista(lst):
+    if len(lst) == 0:
+        return 1
+    else:
+        return lst[0] * produtoLista(lst[1:])
 
 
 def criaDic():
-   dic = {}
-   x = int(input("Quantos elementos para o Dicionário?" ))
+    dic = {}
+    x = int(input("Quantos elementos para o Dicionário?"))
 
-   while x>0:
-      elemento = int(input('Digite o {} elemento da Lista ', format(x)))
-      nome = input("Digite o nome do aluno:")
-      nota = float("Digite a nota do aluno: ")
+    while x > 0:
+        elemento = int(input('Digite o {} elemento da Lista ', format(x)))
+        nome = input("Digite o nome do aluno:")
+        nota = float("Digite a nota do aluno: ")
 
-      dic.get(nome)
-      dic[nome] = nota
-      x -= 1
+        dic.get(nome)
+        dic[nome] = nota
+        x -= 1
 
-   return(dic)
+    return (dic)
 
 
-def imprimeDic(dic);
-   print(dic)
-   time.sleep(4)
+def imprimeDic(dic):
+
+
+    print(dic)
+    time.sleep(4)
 
 
 def alteraNota(aluno):
-   nome = input ('Digite o nome do aluno: ')
-   nota = float(input('Digite a nota: '))
+    nome = input('Digite o nome do aluno: ')
+    nota = float(input('Digite a nota: '))
 
-   aluno[nome] = nota
+    aluno[nome] = nota
 
-   return aluno
+    return aluno
+
 
 def terceiraLista():
-   l = []
-   l1 = []
+    l = []
+    l1 = []
 
-   x = int(input('Quantos elementos para lista 1 ?')
-   while x > 0:
-      i = int(input('Digite o {} elemento pra lista 1: ', format(x)))
-      l.append(i)
-      x -= 1
+    x = int(input('Quantos elementos para lista 1 ?'))
+    while x > 0:
+        i = int(input('Digite o {} elemento pra lista 1: ', format(x)))
+        l.append(i)
+        x -= 1
 
-   x = int(input('Quantos elementos para lista 2 ?')
-   while x > 0:
-      i = int(input('Digite o {} elemento pra lista 1: ', format(x)))
-      l1.append(i)
-      x -= 1 
-   return (l, l1)
+    x = int(input('Quantos elementos para lista 2 ?'))
+    while x > 0:
+        i = int(input('Digite o {} elemento pra lista 1: ', format(x)))
+        l1.append(i)
+        x -= 1
+    return (l, l1)
 
 
 def retornaRepete(lst):
-   l1 = lst[0]
-   l2 = lst[1]
+    l1 = lst[0]
+    l2 = lst[1]
 
-   print(l1)
-   print(l2)
-   
-   time.sleep(3)
-   l3 = []
-   
-   if 1 in lst[0]
-      print(lst[1])
-      time.sleep(5)
-   
-   i = 0
-   
-   while i < len(l2):
-      j = 0
-      while j < len(l1):
-         if l1[j] == l2 [i]:
-            l3.append(l2[i])
-            break
-         j += 1
-      i += 1
-   return(l3)
+    print(l1)
+    print(l2)
 
+    time.sleep(3)
+    l3 = []
+
+    if 1 in lst[0]:
+        print(lst[1])
+        time.sleep(5)
+
+    i = 0
+
+    while i < len(l2):
+        j = 0
+        while j < len(l1):
+            if l1[j] == l2[i]:
+                l3.append(l2[i])
+                break
+            j += 1
+        i += 1
+    return (l3)
