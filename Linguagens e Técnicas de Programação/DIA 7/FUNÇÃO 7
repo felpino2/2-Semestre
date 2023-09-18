@@ -1,4 +1,4 @@
-def func7():
+def func07():
 # FUNÇÃO 7 - FELIPE AUGUSTO 22304569 ; MARCELLO MONTELLA 22300867 ; LÍVIA LEMOS 22300447
 
     alunos = {}
@@ -16,16 +16,20 @@ def func7():
 
         try:
             nome = input('Digite o nome do aluno ')
-            nota = float(input('Digite a nota do aluno '))
+            nota = float(input('Digite a nota do aluno, de 0 a 10 '))
+            if nota > 10 or nota < 0:
+                raise TypeError('Nota inválida ')
+
             alunos.get(nome)
             alunos[nome] = nota
-            
+
             i += 1
 
         except:
-            print('Nota tem que ser número')
+            print('Nota Inválida ')
 
     print(alunos)
+
     return alunos
 
-func7()
+func07()
