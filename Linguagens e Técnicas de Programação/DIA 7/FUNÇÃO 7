@@ -1,0 +1,31 @@
+def func7():
+# FUNÇÃO 7 - FELIPE AUGUSTO 22304569 ; MARCELLO MONTELLA 22300867 ; LÍVIA LEMOS 22300447
+
+    alunos = {}
+    i = 0
+
+    while True:
+        try:
+            numeroDeAlunos = int(input('Quantos alunos para o dicionário? '))
+            break
+        except:
+            print('Número de alunos tem que ser inteiro')
+
+
+    while i < numeroDeAlunos:
+
+        try:
+            nome = input('Digite o nome do aluno ')
+            nota = float(input('Digite a nota do aluno '))
+            alunos.get(nome)
+            alunos[nome] = nota
+            
+            i += 1
+
+        except:
+            print('Nota tem que ser número')
+
+    print(alunos)
+    return alunos
+
+func7()
