@@ -1,1 +1,24 @@
+// ÁRVORES BINÁRIAS
+// NO CASO ESQUERDA PRA DIREITA
+// PRÉ ORDEM: GARANTE QUE RAIZ É PRIMEIRO 123 -- RAIZ, ESQUERDA, DIREITA
+// EM ORDEM: 213 -- ESQUERDA, RAIZ, DIREITA
+// PÓS ORDEM: GARANTE QUE RAIZ É A ÚLTIMA 231 -- ESQUERDA DIREITA RAIZ
+//
+//
+// APENAS LÊ SUBJACENTE QUANDO VOLTA E NÃO LÊ
+//                10
+//               8   1
+//             3  7    4
+//               2
+// PRÉ 10 8 3 7 2 1 4
+// ORDEM 3 8 2 7 10 1 4
+// PÓS ORDEM 3 2 7 8 4 1 10
+//
+// PRÉ ORDEM
+//A B D H I E C F J K G L
 
+// EM ORDEM
+//H, D, I, B, E, A, J, F, K, C, G, L
+
+// PÓS ORDEM
+//H I D E B J K F L G C A
