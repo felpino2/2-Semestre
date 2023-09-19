@@ -1,0 +1,93 @@
+// ÁRVORES BINÁRIAS
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/////////////////////
+// Declaração de Estrutura
+
+struct no {
+    int numero;
+    struct no *esquerda;
+    struct no *direita;
+};
+
+// FUNÇÃO QUE INSERE UM ELEMENTO NA ÁRVORE
+
+struct no *inserir (struct no *raiz, int numero) {
+    if (raiz == NULL) {
+        raiz = (struct no *) malloc(sizeof(struct no));
+        raiz -> numero = numero;
+        raiz -> esquerda = NULL;
+        raiz -> direita = NULL;
+    } else {
+        if ((rand()%2 == 0)) {
+            raiz -> esquerda = inserir(raiz -> esquerda, numero);
+        } else {
+            raiz -> direita = inserir(raiz -> direita, numero);
+        }
+    }
+
+    return raiz;
+};
+
+// FUNÇÃO QUE NAVEGA A ÁRVORE EM PRÉ-ORDEM
+
+void navegarPreOrdem(struct no *raiz){
+    if (raiz != NULL) {
+        printf("%d\t", raiz -> numero);
+        navegarPreOrdem(raiz -> esquerda);
+        navegarPreOrdem(raiz -> direita);
+    }
+}
+
+// FUNÇÃO QUE NAVEGA A ÁRVORE EM ORDEM
+
+void navegarEmOrdem(struct no *raiz){
+    if (raiz != NULL) {
+        navegarEmOrdem(raiz -> esquerda);
+        printf("%d\t", raiz -> numero);
+        navegarEmOrdem(raiz -> direita);
+    }
+}
+
+// FUNÇÃO QUE NAVEGA A ÁRVORE EM PÓS-ORDEM
+
+void navegarPosOrdem(struct no *raiz){
+    if (raiz != NULL) {
+        navegarPosOrdem(raiz -> esquerda);
+        navegarPosOrdem(raiz -> direita);
+        printf("%d\t", raiz -> numero);
+    }
+}
+
+// FUNÇÃO PRINCIPAL DE EXECUÇÃO DO PROGRAMA
+
+int main() {
+    //Declaração de Variáveis
+
+    struct no *raiz = NULL;
+    time_t t;
+
+    // Inicialização da aleatoriedade
+    srand((unsigned) time(&t));
+
+    // Criação da Árvore
+    int i = 0;
+    for (i = 1; i < 10; i++){
+        raiz = inserir(raiz, i);
+    }
+
+    // Navegações
+    printf("Pre-Ordem:\t");
+    navegarPreOrdem(raiz);
+    printf("\n=============\n");
+    printf("Em-Ordem:\t");
+    navegarEmOrdem(raiz);
+    printf("\n=============\n");
+    printf("Pos-Ordem:\t");
+    navegarPosOrdem(raiz);
+    printf("\n=============\n");
+
+}
