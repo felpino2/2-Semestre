@@ -1,1 +1,149 @@
+// PROGRANA QUE IMPLEMENTA UMA ÁRVORE DE BUSCA
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// DECLARAÇÃO DE ESTRUTURAS
+
+struct no {
+	
+	int numero;
+	struct no *esquerda;
+	struct no *direita;
+	
+};
+
+// FUNÇÃO QUE INSERE UM NÓ NA ÁRVORE
+
+struct no *inserir ( struct no *raiz, int numero ) {
+	
+	if ( raiz == NULL ){
+
+		raiz = (struct no *) malloc(sizeof(struct no));
+		raiz -> numero = numero;
+		raiz -> esquerda = NULL;
+		raiz -> direita = NULL;
+		
+	} else {
+		
+		if ( numero < raiz -> numero ){
+			
+			raiz -> esquerda = inserir(raiz -> esquerda, numero);
+			
+		} else if ( numero > raiz -> numero ){
+			
+			raiz -> direita = inserir(raiz -> direita, numero);
+			
+		}
+		
+	}
+	
+	return raiz;
+	
+}
+
+// FUNÇÃO QUE BUSCA UM NO NA ÁRVORE
+
+void buscar ( struct no *raiz, int numero ) {
+	
+	if ( raiz == NULL ){
+		
+		printf("NAO ACHEI!!!\n");
+		
+	} else if ( raiz -> numero == numero ){
+			
+			printf("ACHEI!!!\n");
+			
+	} else if ( raiz -> numero > numero ){
+		
+			buscar(raiz -> esquerda, numero);
+			
+	} else {
+			
+			buscar(raiz -> direita, numero);
+			
+	}
+		
+}
+
+
+// FUNÇÃO QUE NAVEGA A ÁRVORE EM ORDEM
+
+void navegar ( struct no *raiz ) {
+	
+	if ( raiz != NULL ){
+		
+		navegar(raiz -> esquerda);
+		printf("%d\t", raiz -> numero);
+		navegar(raiz -> direita);
+		
+	}
+	
+}
+
+// FUNÇÃO PRINCIPAL DE EXECUÇÃO DE PROGRAMA 
+
+int main() {
+	
+	// DECLARAÇÃO DE VARIÁVEIS 
+	
+	struct no *raiz = NULL;
+	int opcao = 0;
+	int numero = 0;
+	int i = 0;
+	
+	// INICIALIZAÇÃO DE ALEATORIEDADE
+	
+	time_t t;
+	srand((unsigned) time(&t));
+	
+	// MENU DE OPÇOES
+	
+	while (opcao != 5){
+		
+		printf("\n");
+		printf("+=========================+\n");
+		printf("|      MENU DE OPCOES     |\n");
+		printf("+=========================+\n");
+		printf("| 1- CRIAR ALEATORIAMENTE |\n");
+		printf("| 2- INSERIR NO           |\n");
+		printf("| 3- BUSCAR NO            |\n");
+		printf("| 4- NAVEGAR              |\n");
+		printf("| 5- SAIR                 |\n");
+		printf("+=========================+\n");
+		printf("Digite a sua opcao: ");
+		scanf("%d", &opcao);
+		
+		switch (opcao) {
+			
+			case 1:
+				for ( i = 0; i < 100 ; i++ ){
+					
+					raiz = inserir(raiz, rand());
+					
+				}
+				break;
+			
+			case 2:
+				printf("Digite o numero: ");
+				scanf("%d", &numero);
+				raiz = inserir(raiz, numero);
+				break;
+			
+			case 3:
+				printf("Digite o numero: ");
+				scanf("%d", &numero);
+				buscar(raiz,numero);
+				break;
+				
+			case 4:
+				navegar(raiz);
+				break;
+			
+			
+		}
+		
+	}
+	
+}
