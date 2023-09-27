@@ -1,0 +1,89 @@
++= ASSEMBLY =+
+
+EXEMPLO:
+
+   MOV   AL, 10   ;AL é 10.
+   AND   AL, FF   ;AL and FF é AL 10 and 11111111.
+   END
+
+1. Faça um programa que atribua aos registradores AL, BL, CL e DL os valores FA, FB, FC e FD respectivamente.
+
+  MOV   AL, FA
+  MOV   BL, FB
+  MOV   CL, FC
+  MOV   DL, FD
+  END
+
+EXEMPLO 2:
+
+  MOV   DL, FE   ;DL agora é FE.
+  MOV   [10], DL   ;O endereço de 10 agora é DL, que é FE.
+  MOV   BL, 10   ;BL agora é 10.
+  MOV   AL, [BL]   ;AL agora é o endereço de BL, ou seja, o endereço de 10 = DL = FE. 
+  END
+
+2. Faça um programa, a partir do anterior, que troque o conteúdo dos registradores AL e DL; BL e CL, utilizando as instruções PUSH e POP.
+
+  MOV   AL, FA
+  MOV   BL, FB
+  MOV   CL, FC
+  MOV   DL, FD
+  PUSH   AL
+  PUSH   BL
+  PUSH   CL
+  PUSH   DL
+  POP   AL
+  POP   BL
+  POP   CL
+  POP   DL
+  END
+
+4. Faça um programa que apresente no display de sete segmentos (Porta 02) o valor 88.
+
+  MOV   AL, FF
+  MOV   AL, FE
+  OUT   02
+  END
+
+6. Faça um programa que resolva a seguinte operação lógica: ((DB & FD) ^ (~ 3E)) | (DA). O 
+Resultado final deve ficar em AL, você poderá utilizar registradores e endereços de memória. Os 
+valores dos operandos podem ser atribuídos a registradores ou para células da memória
+principal.
+
+  MOV   AL, DB
+  MOV   BL, FD
+  MOV   CL, 3E
+  NOT   CL
+  MOV   DL, DA
+
+  AND   AL, BL
+  XOR   AL, CL
+  OR   AL, DL
+
+  END
+
+7. Implemente agora um programa que resolva a seguinte operação: 
+((7732 ^ 88CD) | (FDCA & 7235)) ^ (1111)
+  Obs: AND (E) = &; OR (OU) = |; XOR (OU-EXCLUSIVO) = ^; NOT (NÃO, NEGAÇÃO) = ~
+
+  MOV   AL, 77
+  XOR   AL, 88
+  
+  MOV   BL, FD
+  AND   BL, 72
+
+  OR   AL, BL
+  
+  XOR   AL, 11
+  
+  MOV   CL, 32
+  XOR   CL, CD
+
+  MOV   DL, CA
+  AND   DL, 35
+
+  OR   CL, DL
+
+  XOR   CL, 11
+
+  END
