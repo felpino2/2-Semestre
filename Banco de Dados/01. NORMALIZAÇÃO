@@ -1,0 +1,47 @@
+Exercício 1
+Vendedor (nro_vend, sexo_vend, nome_vend {Cliente (nro_cli, end-cli, nome-cli)})
+
+1FN -> (SEPARA TUDO)
+Vendedor = {Número Vendedor, Sexo Vendedor, Nome Vendedor, 
+Cliente = {Número Vendedor, Número Cliente, Endereço Cliente, Nome Cliente}
+
+2FN -> (CRIA DE ENTIDADE ASSOCIATIVA, DEPENDÊNCIA FUNCIONAL TOTAL)
+Vendedor = {Número Vendedor, Sexo Vendedor, Nome Vendedor, 
+Cliente = {Número Cliente, Endereço Cliente, Nome Cliente}
+Cliente-Vendedor(Número Vendedor, Número Cliente) (ENTIDADE ASSOCIATIVA N-N)
+
+3FN ->
+-
+
+4FN ->
+-
+Exercício 2
+Aluno (nro-aluno, nome-depto, sigla-depto, cód-depto, cód-orientador, nome-orientador, fone-orientador, código-curso)
+
+1FN (SOMENTE ATRIBUTOS ATÔMICOS)
+OK
+
+2FN
+Aluno = {Número-Aluno, Código-Departamento, Código-Curso, Código-Orientador}
+Departamento = {Nome-Departamento, Sigla-Departamento, Código-Departamento}
+Orientador = {Código-Orientador, Nome-Orientador, Telefone-Orientador}
+
+
+
+
+
+
+
+
+EXERCÍCIO 3
+empresa (cod-empresa, nome-empresa, end-empresa, nome-fundador, nacionalidade-fundador, {filial (filial-nro, filial-local, filial-data-abertura) } )
+
+1FN
+Empresa = {Código-Empresa, Nome-Empresa, Endereço-Empresa, Nome-Fundador, Nacionalidade-Fundador}
+Filial = {Filial-Número, Filial-Local, Filial-Data-Abertura}
+
+2FN (SOMENTE DEPENDÊNCIA FUNCIONAL)
+OK
+
+3FN (DEPENDÊNCIA FUNCIONAL TRANSITIVA
+OK
