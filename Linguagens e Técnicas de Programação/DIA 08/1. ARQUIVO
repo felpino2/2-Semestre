@@ -5,8 +5,8 @@ Comandos gerais
 'r' - Ler - Apenas arquivos txt
 'a' - Append - Atualiza e acrescenta registros
 'w' - Escreve e cria arquivos, se o mesmo já existir, ele sobrepõe.
-'t' -
-'b' -
+'t' - Arquivo padrão
+'b' - Ler e grava - Arquivo binário
 
 - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - -
