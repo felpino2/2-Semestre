@@ -1,0 +1,64 @@
+- - - - - - - - - - - - - - - - - - -
+
+Comandos gerais
+
+'r' - Ler - Apenas arquivos txt
+'a' - Append - Atualiza e acrescenta registros
+'w' - Escreve e cria arquivos, se o mesmo já existir, ele sobrepõe.
+'t' -
+'b' -
+
+- - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - -
+
+Digamos que eu tenha um arquivo chamado pessoas.txt, dentro deste arquivo eu tenho os seguintes dados:
+
+José Santos Rua Alvarenga 311 232345-8 12/04/1973
+
+- - - - - - - - - - - - - - - - - - -
+
+arq = open("pessoas.txt","r") 
+# open("nomedoarquivo.txt","comando") 
+
+for linha in arq:
+  itens = linha.split()
+  # Split separa os espaços por não ter nada entre os parênteses, se você colocar (';') ou qualquer outro comando no parênteses, ele vai separas os itens sempre que encontrar esse comando (nesse caso, ';'). 
+ 
+  print("Nome: ", itens[0], itens[1])
+  print("Endereço: ", itens[2], itens[3], itens[4])
+  print("Documento de identidade: ", itens[5])
+  print("Data de nascimento: ", itens[6])
+  print("\n\n")
+
+- - - - - - - - - - - - - - - - - - -
+
+Esse será o output:
+Nome: José Santos
+Endereço: Rua Alvarenga 311
+Documento de identidade: 232345-8
+Data de nascimento: 12/04/1973
+  
+- - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - -
+
+def lerGravar():
+  x = input("Digite um texto para gravar no arquivo: ")
+  y = input("Digite o nome do arquivo: ")
+  return(x,y)
+
+def Gravar(texto,nomeArq):
+  f = open(nomeArq,"a")
+  f.write(texto)
+  f.close()
+
+def lerArq():
+  k = open("nomeArq.txt","r")
+  l = k.readline()
+  k.close()
+  return l
+
+x,y - lerGravar()
+print(x,y)
+print(lerArq())
+
+- - - - - - - - - - - - - - - - - - -
