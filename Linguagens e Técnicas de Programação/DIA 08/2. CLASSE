@@ -1,3 +1,4 @@
+- - - - - - - - - - - - - - - - - - -
 
 Class pessoa():
   nome = 'Pedro'
@@ -9,3 +10,4 @@ def imprime(p):
 
 p = pessoa() # Objeto, imprimindo a referência.
 
+- - - - - - - - - - - - - - - - - - -
