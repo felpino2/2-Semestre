@@ -1,0 +1,11 @@
+
+Class pessoa():
+  nome = 'Pedro'
+  idade = 23
+
+def imprime(p):
+  print("Nome: ", p.nome)
+  print("Idade: ", p.idade)
+
+p = pessoa() # Objeto, imprimindo a referência.
+
