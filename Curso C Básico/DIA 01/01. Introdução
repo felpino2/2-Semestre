@@ -16,7 +16,7 @@ void main() //Void não retorna nenhum valor
     printf("\t Mundo"); // \t para tab = 5 espaços
 }
 
-/* int main()//retorna algum valor, neste caso int
+/* int main() //retorna algum valor, neste caso int
   {
       return 0
   } */
