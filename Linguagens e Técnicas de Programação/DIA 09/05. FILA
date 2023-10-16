@@ -1,0 +1,18 @@
+class Fila():
+    def __init__(self):
+        # inicia uma lista vazia
+        self.q = []
+
+    def filaVazia(self):
+        return (len(self.q) == 0)
+
+    def adicionaFila(self, item):
+        return self.q.append(item)
+
+    def retiraFila(self):
+        return self.q.pop(0)
+
+    def imprime(self):
+        print(self.q)
+
+#programa principal
