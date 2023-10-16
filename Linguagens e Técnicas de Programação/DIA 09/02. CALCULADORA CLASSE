@@ -1,0 +1,21 @@
+# CALCULADORA
+
+class calculadora():
+    def add(self, x,y):
+      return x+y
+
+    def subtrai(self, x,y):
+      return x - y
+
+    def multiply(self, x,y):
+      return x*y
+
+    def divide(self, x,y):
+      return x/y
+
+a = 3
+b = 2
+
+c =  calculadora()
+s = c.add(a, b)
+print(s)
