@@ -19,3 +19,7 @@ from calculadora1610 import add
 import calculadora1610 as cal
 
 print(add(10,5))
+
+#or
+
+print(cal.add(10,5))
