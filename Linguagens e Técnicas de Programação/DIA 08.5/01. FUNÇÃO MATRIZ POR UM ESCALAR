@@ -1,0 +1,29 @@
+[19:19, 16/10/2023] Gabriel Lima Ceub: m = [[1,2,3,],
+     [4,5,6],
+     [7,8,9]]
+print(m)
+
+for i in range(len(m)):
+    for j in range(len(m[0])):
+        if j == i:
+            print(m[i][j])
+            
+            
+            
+#função de produto da matriz M por um escalar x:
+
+def produtoMatriz(m,x):
+    for i in range(len(m)):
+        for j in range(len(m[0])):
+            if j == i:
+                m[i][j] = m[i][j] * x
+    return(m)
+    
+print("Produto por escalar: ",produtoMatriz(m,3))
+[19:20, 16/10/2023] Gabriel Lima Ceub: def matrizQuadrada(m):
+    for i in range(len(m)):
+        for i in range(len(m[0])):
+            resultado = m[j][i] * m[j][i]
+    return resultado
+
+matrizQuadrada(m)
