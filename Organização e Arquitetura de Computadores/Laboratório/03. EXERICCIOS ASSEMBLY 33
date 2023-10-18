@@ -31,12 +31,12 @@ utilize, como referência, o programa do exercício 3 da folha 1.
 
 	MOV	DL, 00
 
-BEGIN1:	MOV	BL, [AL]	
+BEGIN1:	XOR 	DL, AL
+	XOR	DL, BL
+	
+	MOV	BL, [AL]	
 	INC	BL
 	ADD	AL, 2
-
-	XOR 	DL, AL
-	XOR	DL, BL
 
 	CMP	BL, 70	
 	JS	BEGIN1
