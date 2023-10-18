@@ -19,3 +19,49 @@ BEGIN:	IN 	00
       
       	END
 
+3)  Faça um programa que preencha os endereços de memória de 6016 a 6F16 com
+valores a partir de 05 e com incremento de 2. Após inicializar as posições de memória
+realize a operação de ou-exclusivo entre os conteúdos dos endereços mencionados
+acima e armazene o resultado final no endereço 7016. Para a construção do laço
+utilize, como referência, o programa do exercício 3 da folha 1.
+
+
+	MOV 	AL, 05
+	MOV	BL, [60]
+
+	MOV	DL, 00
+
+BEGIN1:	MOV	BL, [AL]	
+	INC	BL
+	ADD	AL, 2
+
+	XOR 	DL, AL
+	XOR	DL, BL
+
+	CMP	BL, 70	
+	JS	BEGIN1
+
+	JZ	BEGIN2
+
+
+BEGIN2: MOV 	[70], DL	
+	
+	
+	
+
+	END	
+	
+	
+	
+
+al = 05
+bl = [60]
+loop: 
+bl = al
+bl 2+
+al 2+
+goto loop
+
+if bl = 6f
+end	BB: :
+
