@@ -1,5 +1,10 @@
+01 Faça um programa que acenda as lâmpadas vermelhas do
+semáforo (porta 01); depois as lâmpadas amarelas, mantendo as
+vermelhas acesas e por fim as verdes, mantendo as demais
+acesas.
+
 ---------------------PARA DESLIGAR AS LUZES:
-  MOV	AL, 00
+  	MOV	AL, 00
 	OUT	01
 	END
 --------------------PARA LIGAR DOIS VERMELHOS
@@ -17,3 +22,33 @@
 	MOV	AL, FC
 	OUT	01
 	END
+
+02 - Faça um programa que escreva no display de sete segmentos
+(porta 02) as letras C e E, no display da esquerda e da direita
+respectivamente. Observe que só é possível acender um display de
+cada vez.
+
+	MOV	AL, F0
+	MOV	AL, F5 ; LIGA O Da direita quando o último bit for 1
+	OUT	02
+	END
+
+03 - Repita o programa do exercício 1, mas agora as lâmpadas
+amarelas acenderão somente após ser pressionada uma tecla
+qualquer (porta do teclado 07 ou 00 depende da versão). Faça o
+mesmo para as lâmpadas verdes.
+	MOV	AL, 90	
+	OUT	01
+
+	MOV	AL, D8	
+	OUT	01
+
+	IN 	00
+	MOV	AL, FC
+	
+	OUT	01
+	
+	END
+
+
+
