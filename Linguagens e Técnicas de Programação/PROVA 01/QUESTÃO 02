@@ -14,3 +14,11 @@ def criaFuncionario():
     enter.salario = float(input("Qual o salário? "))
     enter.horas = int(input("Quantas horas trabalhadas? "))
 
+def armazenarNoArquivo(VariaveisFuncionario):
+
+    Arq = open('folha_pag.txt', 'a')
+    Arq.write("Nome: ", VariaveisFuncionario.nome)
+    Arq.write("Cargo: ", Funcionario.cargo)
+    Arq.write("Salario: ", Funcionario.salario)
+    Arq.write("Horas trabalhadas: ", Funcionario.horas)
+
