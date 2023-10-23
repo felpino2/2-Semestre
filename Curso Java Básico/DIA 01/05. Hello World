@@ -1,0 +1,11 @@
+package teste0;
+
+public class Teste01 {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World "); //sysout ctrl+espaço
+		//BOTÃO DIREITO RUN AS JAVA APPLICATION OU VAI  NO BOTÃO VERDE
+		
+	}
+
+}
