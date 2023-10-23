@@ -1,1 +1,27 @@
+package teste0;
 
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Teste01 {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		int numFuncionario = 0;
+		float porHora = 0;
+		float salario = 0;
+		
+		System.out.println("Qual o número do funcionário? ");
+		numFuncionario = sc.nextInt(); 
+		
+		System.out.println("Quanto ele recebe por hora? ");
+		porHora = sc.nextFloat();
+		
+		salario = porHora*100;
+		
+		System.out.printf("O Número dele é %d ,o salário é r$ %.2f", numFuncionario, salario);
+	}
+
+}
