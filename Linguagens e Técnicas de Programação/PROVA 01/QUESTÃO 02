@@ -22,3 +22,26 @@ def armazenarNoArquivo(VariaveisFuncionario):
     Arq.write("Salario: ", Funcionario.salario)
     Arq.write("Horas trabalhadas: ", Funcionario.horas)
 
+---- 
+class Funcionario():
+    def __init__(self, nome, cargo, salario, horas):
+        self.nome = nome
+        self.cargo = cargo
+        self.salario = salario
+        self.horas = horas
+
+def criaFuncionario():
+
+    nome = input("Qual o nome do funcionario? ")
+    cargo = input("Qual o cargo? ")
+    salario = float(input("Qual o salário? "))
+    horas = int(input("Quantas horas trabalhadas? "))
+
+def armazenarNoArquivo(criaFuncionario):
+
+    Arq = open('folha_pag.txt', 'a')
+    Arq.write("Nome: ", nome)
+    Arq.write("Cargo: ", cargo)
+    Arq.write("Salario: ", salario)
+    Arq.write("Horas trabalhadas: ", horas)
+
