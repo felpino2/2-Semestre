@@ -1,6 +1,6 @@
 - - - - - - - - - - - - - - - - - - -
 
-Class pessoa():
+class pessoa():
   nome = 'Pedro'
   idade = 23
 
