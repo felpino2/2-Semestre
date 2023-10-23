@@ -12,3 +12,47 @@ public class exemplo {
 		sc.close();     // Serve para quando não precisar mais da objeto
 	}
 }
+
+/* Para String ➞ sc.next();
+Para Inteiro ➞ sc.nextInt();
+Para Double ➞ sc.nextDouble();
+Para Char ➞ sc.next().charAt(n);      \\ n ➞ índice
+*/
+
+------------------------------------
+// Valor inteiro:
+package main;
+import java.util.Scanner;
+public class exemplo {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int x;
+		
+		System.out.println("Digite um valor:");
+		x = sc.nextInt();
+		System.out.println("Número digitado é " + x);
+		
+		sc.close();
+	}
+}
+
+----------------------------------------
+// PARA LER UM TEXTO ATÉ QUEBRA DE LINHA
+package main;
+import java.util.Scanner;
+public class exemplo {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s1, s2, s3;
+		s1 = sc.nextLine();
+		s2 = sc.nextLine();
+		s3 = sc.nextLine();
+		System.out.println("DADOS DIGITADOS:");
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		sc.close();
+	}
+}
+
+
