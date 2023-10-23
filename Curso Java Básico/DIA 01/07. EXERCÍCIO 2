@@ -1,0 +1,27 @@
+package main;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+	Scanner sc = new Scanner(System.in);
+	double x;
+	int y;
+	double z;
+	
+	System.out.println("Digite o seu número de identificação:");
+	y = sc.nextInt();
+	System.out.println("Digite o valor que você recebe por hora:");
+	z = sc.nextDouble();
+	System.out.println("Digite o seu número de horas trabalhadas:");
+	x = sc.nextDouble();
+	
+	System.out.printf("Funcionário número: %d\n", y);
+	System.out.printf("Seu salário é: US$ %.2f", x*z);
+			
+	}
+
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
