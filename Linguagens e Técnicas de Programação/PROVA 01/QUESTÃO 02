@@ -1,0 +1,16 @@
+class Funcionario():
+    def __init__(self, nome, cargo, salario, horas):
+        self.nome = nome
+        self.cargo = cargo
+        self.salario = salario
+        self.horas = horas
+
+def criaFuncionario():
+
+    enter = Funcionario()
+
+    enter.nome = input("Qual o nome do funcionario? ")
+    enter.cargo = input("Qual o cargo? ")
+    enter.salario = float(input("Qual o salário? "))
+    enter.horas = int(input("Quantas horas trabalhadas? "))
+
