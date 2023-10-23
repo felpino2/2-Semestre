@@ -1,0 +1,42 @@
+package DIA01;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Dia01 {
+
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+	/* Fazer um programa para ler quatro valores inteiros A, B, C e D. A seguir, calcule e mostre a diferença do produto de C e D segundo a fórmula: DIFERENÇA = (A * B - C * D).
+
+Entrada:                 Saída:
+5                             Diferença = -26
+6
+7
+8 */
+		int A;
+		int B;
+		int C;
+		int D;
+		
+		System.out.println("Qual o valor de A?");
+		A = sc.nextInt();
+		
+		System.out.println("Qual o valor de B?");
+		B = sc.nextInt();
+		
+		System.out.println("Qual o valor de C?");
+		C = sc.nextInt();
+		
+		System.out.println("Qual o valor de D?");
+		D = sc.nextInt();
+		
+		System.out.printf("Diferença: %d", (A * B) - (C * D));
+		
+	}
+
+}
