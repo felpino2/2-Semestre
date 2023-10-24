@@ -1,0 +1,118 @@
+// PROGRAMA QUE IMPLEMENTA UM GRAFO
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+const int TAMANHO = 5;
+
+// FUNÇÃO QUE DETERMINA TAMANHO DO GRAFO
+
+int setTamanho() {
+    int retorno = 0;
+
+    printf("Digite o tamanho do grafo: ");
+    scanf("%d", &retorno);
+
+    return retorno;
+}
+
+
+// FUNÇÃO QUE CRIA 
+
+int **criar(int tamanho) {
+    int i = 0;
+    int j = 0;
+
+    //CRIAÇÃO
+    int **grafo = (int **) malloc(tamanho *sizeof(int *));
+    for (i = 0 ; i < tamanho ;  i++) {
+        grafo[i] = (int *) malloc(tamanho * sizeof(int));
+    }
+
+    //INICIALIZAÇÃO
+    for (i = 0 ; i < tamanho ; i++){
+        for (j = 0 ; j < tamanho ; j++){
+            grafo[i][j] = 0;
+        }
+    }
+
+    // RETORNO
+    return grafo;
+
+}
+
+
+// Função que preenche o grafo
+
+
+void preencher(int **grafo, int tamanho) {
+    int i = 0;
+    int j = 0;
+    int amigo = 0;
+
+    for (i = 0 ; i < (tamanho - 1) ; i++) {
+        for (j = (i+1) ; j < tamanho ; j++){
+            printf("Digite <1> se %d for amigo de %d\t", i, j);
+            scanf("%d", &amigo);
+
+            grafo[i][j] = amigo;
+            grafo[j][i] = amigo;
+        }
+    }
+
+}
+
+//FUNÇÃO QUE IMPRIME
+
+void imprimir(int **grafo, int tamanho) {
+    int i = 0;
+    int j = 0;
+
+    for (i = 0 ; i < tamanho ; i ++){
+        for (j = 0 ; j < tamanho ; j++) {
+            printf("%d\t", grafo[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+//FUNÇÃO QUE DESCOBRE O VÉRTICE MAIS POPULAR
+int descobirVerticeMaisPopular(int **grafo, int tamanho) {
+    int vertice = -1;
+    int qtdAmigos = 0;
+    int contador = 0;
+    int i = 0;
+    int j = 0;
+
+    for (i = 0 ; i < tamanho ; i++){
+        contador  = 0;
+        for (j = 0; j < tamanho ; j++){
+            if (grafo[i][j]) {
+                contador++;
+            }
+        }
+        if (contador > qtdAmigos) {
+            vertice = i;
+            qtdAmigos = contador;
+        }
+    }
+
+    return vertice;
+}
+
+// FUNÇÃO PRINCIPAL DE EXECUÇÃO DO PROGRAMA
+
+int main() {
+    int tamanho = setTamanho();
+
+    int **grafo = criar(tamanho);
+
+    preencher(grafo, tamanho);
+
+    imprimir(grafo, tamanho);
+
+    int vertice = descobirVerticeMaisPopular(grafo, tamanho);
+    printf("O VÉRTICE MAIS POPULAR É %d\n", vertice);
+
+}
