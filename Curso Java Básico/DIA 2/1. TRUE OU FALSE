@@ -1,0 +1,5 @@
+/* System.out.print("%b",
+!(false && false) || false); 
+System.out.printf("%b", !false && false||false);
+
+*/
