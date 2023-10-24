@@ -1,0 +1,24 @@
+package banana;
+	import java.util.Locale;
+	import java.util.Scanner;
+
+
+
+	public class Dia02 {
+
+		public static void main(String[] args) {
+			Locale.setDefault(Locale.US);
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Qual a variável? ");
+			int A = sc.nextInt();
+				
+			if (A%2 == 0) {
+				System.out.println("Par");
+			} else {
+				System.out.println("Ímpar");
+				}
+				
+		}
+
+}
