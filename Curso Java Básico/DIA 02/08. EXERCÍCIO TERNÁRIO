@@ -1,0 +1,23 @@
+package banana;
+	import java.util.Locale;
+	import java.util.Scanner;
+
+
+
+	public class Dia02 {
+
+		public static void main(String[] args) {
+			Locale.setDefault(Locale.US);
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Qual a nota? ");
+			int A = sc.nextInt();
+				
+			String Resultado  = (A > 5) ? "Aprovado" : "Reprovado";
+			
+			System.out.println(Resultado);
+			
+			sc.close();
+		}
+
+}
