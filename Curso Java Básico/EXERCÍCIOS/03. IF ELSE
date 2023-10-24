@@ -27,10 +27,10 @@ package banana;
 				System.out.printf("%d", A-B);
 				break;
 			case 3:
-				System.out.printf("%f", A/B);
+				System.out.printf("%.2f", (float)A/B);
 				break;
 			case 4: 
-				System.out.printf("%f", A*B);
+				System.out.printf("%.2f", (float)A*B);
 				break;
 			default:
 				System.out.println("Erro.");
@@ -40,3 +40,4 @@ package banana;
 		}
 
 }
+
