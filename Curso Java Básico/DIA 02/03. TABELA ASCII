@@ -7,3 +7,6 @@ public class exemplo {
 }
 
 // SAÍDA A
+
+NUMERO - 32 = CARÁCTER MAIUSCULO
+NUMERO + 32 = CARACTER MINUSCULO
