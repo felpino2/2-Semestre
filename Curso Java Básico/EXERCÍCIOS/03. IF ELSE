@@ -1,0 +1,42 @@
+package banana;
+	import java.util.Locale;
+	import java.util.Scanner;
+
+
+
+	public class Dia02 {
+
+		public static void main(String[] args) {
+			Locale.setDefault(Locale.US);
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("ESCOLHA UM VALOR");
+			int A = sc.nextInt();
+			
+			System.out.println("ESCOLHA OUTRO VALOR");
+			int B = sc.nextInt();
+			
+			System.out.println("<1> Para Soma, <2> para Subtração, <3> para Divisão, <4> para Multiplicação");
+			int X = sc.nextInt();
+			
+			switch (X) {
+			case 1:
+				System.out.printf("%d", A+B);
+				break;
+			case 2:
+				System.out.printf("%d", A-B);
+				break;
+			case 3:
+				System.out.printf("%d", A/B);
+				break;
+			case 4: 
+				System.out.printf("%d", A*B);
+				break;
+			default:
+				System.out.println("Erro.");
+			}
+			
+			sc.close();
+		}
+
+}
