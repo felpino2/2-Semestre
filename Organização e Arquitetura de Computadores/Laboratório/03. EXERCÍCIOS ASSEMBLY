@@ -19,6 +19,7 @@ BEGIN:	IN 	00
       
       	END
 
+
 3)  Faça um programa que preencha os endereços de memória de 6016 a 6F16 com
 valores a partir de 05 e com incremento de 2. Após inicializar as posições de memória
 realize a operação de ou-exclusivo entre os conteúdos dos endereços mencionados
