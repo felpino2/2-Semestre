@@ -1,0 +1,19 @@
+package MAIN;
+import java.util.Scanner;
+
+public class MAIN {
+
+	public static void main(String[] args) {
+		
+		int A;
+		int B;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite o valor de A: ");
+		A = sc.nextInt();
+		System.out.println("Digite o valor de B: ");
+		B = sc.nextInt();
+		
+		System.out.printf("Sua multiplicação é: %d", A*B);
+	}
+	
+}
