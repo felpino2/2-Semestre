@@ -1,0 +1,22 @@
+package MAIN;
+import java.util.Scanner;
+
+public class MAIN {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite a sua string:");
+		String A = sc.nextLine();
+		
+		System.out.println("Digite a letra inicial:");
+		char x = sc.next().charAt(0);
+		System.out.println("Digite a letra que irá substituir a inicial:");
+		char y = sc.next().charAt(0);
+		
+		String B1 = A.replace(x,y);
+		System.out.println(B1);
+	}
+	
+}
