@@ -27,7 +27,7 @@ Departamento = {Nome-Departamento, Sigla-Departamento, Código-Departamento}
 Orientador = {Código-Orientador, Nome-Orientador, Telefone-Orientador}
 
 
-
+// http://www.bosontreinamentos.com.br/modelagem-de-dados/modelagem-de-dados-dependencias/#:~:text=n%C3%A3o%20do%20ID_Aluno.-,Depend%C3%AAncia%20Funcional%20Transitiva,campo%20n%C3%A3o%2Dchave%20na%20tabela.
 
 
 
