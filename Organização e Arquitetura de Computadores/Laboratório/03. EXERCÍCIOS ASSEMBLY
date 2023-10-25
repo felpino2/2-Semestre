@@ -45,7 +45,7 @@ count2: mov bl,[al]
 	cmp bl,[6F]
 	js count2
 
-	mov [70],dl7
+	mov [70],dl
 	end
 	
 	
