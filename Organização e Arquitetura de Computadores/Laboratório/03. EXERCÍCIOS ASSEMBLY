@@ -26,30 +26,27 @@ acima e armazene o resultado final no endereço 7016. Para a construção do la�
 utilize, como referência, o programa do exercício 3 da folha 1.
 
 
-	MOV 	AL, 05
-	MOV	BL, [60]
+	mov al,05
+	mov bl,60
 
-	MOV	DL, 00
+count:  mov [bl],al
 
-BEGIN1:	XOR 	DL, AL
-	XOR	DL, BL
-	
-	MOV	BL, [AL]	
-	INC	BL
-	ADD	AL, 2
+	inc bl
+	add al,02
+	cmp bl,70
+	js count
 
-	CMP	BL, 70	
-	JS	BEGIN1
+	mov al,61
+	mov dl,[60]
 
-	JZ	BEGIN2
+count2: mov bl,[al]
+	xor dl,bl
+	inc al
+	cmp bl,[6F]
+	js count2
 
-
-BEGIN2: MOV 	[70], DL	
-	
-	
-	
-
-	END	
+	mov [70],dl7
+	end
 	
 	
 	
