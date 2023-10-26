@@ -1,0 +1,16 @@
+package main;
+import java.util.Scanner;
+public class for_exemplo {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int valor;
+		System.out.println("Digite um valor (-1 para sair): ");
+	
+		do {
+			valor = sc.nextInt();
+		} while(valor != -1);
+		
+		System.out.println("Fim do código!");
+		sc.close();
+	}
+}
