@@ -1,0 +1,63 @@
+1. Criando um arquivo de texto:
+
+Você pode criar um arquivo de texto vazio usando a função open() com o modo de escrita ("w") e, em seguida, fechá-lo.
+
+python
+Copy code
+# Criar um arquivo de texto vazio
+nome_arquivo = "meuarquivo.txt"
+
+# Abre o arquivo no modo de escrita ("w")
+arquivo = open(nome_arquivo, "w")
+
+# Fecha o arquivo
+arquivo.close()
+2. Escrevendo em um arquivo de texto:
+
+Você pode escrever dados em um arquivo de texto usando a função write().
+
+python
+Copy code
+nome_arquivo = "meuarquivo.txt"
+
+# Abre o arquivo no modo de escrita ("w")
+arquivo = open(nome_arquivo, "w")
+
+# Escreve dados no arquivo
+arquivo.write("Olá, mundo!\n")
+arquivo.write("Isso é um exemplo de escrita em arquivo de texto.\n")
+
+# Fecha o arquivo
+arquivo.close()
+3. Lendo um arquivo de texto:
+
+Para ler o conteúdo de um arquivo de texto, você pode usar a função read() ou readline() para ler todo o conteúdo ou linhas individuais, respectivamente.
+
+python
+Copy code
+nome_arquivo = "meuarquivo.txt"
+
+# Abre o arquivo no modo de leitura ("r")
+arquivo = open(nome_arquivo, "r")
+
+# Lê todo o conteúdo do arquivo
+conteudo = arquivo.read()
+print(conteudo)
+
+# Fecha o arquivo
+arquivo.close()
+Lembre-se de que é importante fechar o arquivo após a leitura ou escrita, o que pode ser feito com o método close(). Também é uma boa prática usar a instrução with para abrir arquivos, pois ela garante que o arquivo será fechado corretamente, mesmo se ocorrerem exceções. Aqui está um exemplo usando with:
+
+python
+Copy code
+nome_arquivo = "meuarquivo.txt"
+
+# Escrevendo em um arquivo usando 'with'
+with open(nome_arquivo, "w") as arquivo:
+    arquivo.write("Olá, mundo!\n")
+    arquivo.write("Isso é um exemplo de escrita em arquivo de texto.\n")
+
+# Lendo um arquivo usando 'with'
+with open(nome_arquivo, "r") as arquivo:
+    conteudo = arquivo.read()
+    print(conteudo)
