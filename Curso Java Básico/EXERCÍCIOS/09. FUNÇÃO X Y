@@ -1,0 +1,62 @@
+package DIA01;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Dia01 {
+
+
+	public static double somador(double x, double y) {
+		double soma = x+y;
+		
+		return soma;
+	}
+	
+	public static double produtoquadrado(double x, double y) {
+		double F = x*y*y;
+		
+		return F;
+		
+	}
+	
+	public static double quadradoprimeiro(double x) {
+		double quadrado = x*x;
+		
+		return quadrado;
+	}
+	
+	public static double moduloprimeiro(double x) {
+		if (x > 0) {
+			return x;
+		}
+		if (x < 0) {
+			return x*(-1);
+		}
+		
+		return 0;
+		
+	}
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Qual o primeiro número? ");
+		double x = sc.nextDouble();
+		
+		System.out.println("Qual o segundo número? ");
+		double y = sc.nextDouble();
+		
+		System.out.printf("A soma é %.2f, o produto do primeiro número pelo quadrado do segundo %.2f, o quadrado do primeiro número %.2f, o módulo do primeiro número %.2f", somador(x, y), produtoquadrado(x,y), quadradoprimeiro(x), moduloprimeiro(x));
+		
+		/*Fazer um programa que solicite 2 números e informe (usando função):
+ a) A soma dos números;
+ b) O produto do primeiro número pelo quadrado do segundo;
+ c) O quadrado do primeiro número;
+ f) O módulo do primeiro número)*/ 
+		
+		
+	}
+
+}
