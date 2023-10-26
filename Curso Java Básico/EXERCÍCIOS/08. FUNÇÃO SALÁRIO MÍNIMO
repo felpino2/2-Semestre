@@ -1,14 +1,15 @@
-package teste;
-
-public class Nomezinho {
+package DIA01;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-	public state int salariominimo(double x) {
+public class Dia01 {
+
+
+	public static int salariominimo(double x) {
+		int salarios = (int) x / 1320;
 		
-		
-		
+		return salarios;
 	}
 
 	public static void main(String[] args) {
@@ -19,7 +20,7 @@ import java.util.Scanner;
 		System.out.println("Qual seu salário? ");
 		double sal = sc.nextDouble();
 		
-		salariominimo(sal);
+		System.out.printf("Você possui pelo menos %d salários mínimos.", salariominimo(sal));
 		
 		/*Crie um algoritmo que leia o valor do salário mínimo e o valor do salário de um usuário, faça uma função que calcule a quantidade de salários mínimos esse usuário ganha e imprima o resultado.
 		(1SM=R$788,00)*/ 
