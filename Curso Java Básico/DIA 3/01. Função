@@ -1,0 +1,36 @@
+package main;
+import java.util.Scanner;
+public class for_exemplo {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Entre com 3 números: ");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		
+		int maior = max(a, b, c);
+		
+		imprimir(maior);
+		
+		sc.close();
+	}
+	
+public static int max(int x, int y, int z) {
+		int aux;
+		if (x > y && x > z) {
+			aux = x;
+		} else if (y > z) {
+			aux = y;
+		} else {
+			aux = z;
+		}
+		return aux;
+	}
+	
+	public static void imprimir(int valor) {
+		System.out.println("Maior = " + valor);
+	}
+	
+}
