@@ -1,0 +1,73 @@
+def DadosDesejados(mercadoria):
+
+    preços = []
+    vendas = []
+
+    for i in range(mercadoria):
+
+        preço = float(input("Digite o valor da sua mercadoria: "))
+        venda = float(input("Digite o número de vendas realizadas por ela: "))
+        preços.append(preço)
+        vendas.append(vendas)
+
+    return preços, vendas
+
+def CalculoMensal(preços,vendas):
+    i = 0
+    faturamento = 0.0
+    while (i <= len(preços)):
+        faturamento += preços[i]*vendas[i]
+        i+=1
+
+    return faturamento
+
+def main():
+
+    mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100:"))
+
+    while mercadoria > 100:
+
+        print("Erro.")
+        mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100:"))
+
+    while True:
+
+        print("Menu de opções:\n")
+        print("1. Inserir os dados desejados (Preço e Vendas). ")
+        print("2. Calcular o faturamento mensal. ")
+        print("3. Imprimir o faturamento. ")
+        print("4. Calcular o percentual de vendas por mercadoria, sob o total faturado. ")
+        print("5. Gravar os dados em um arquivo .txt")
+        print("6. Imprimir o gráfico de vendas das cinco mercadorias mais vendidas no mês. ")
+
+        opt = int(input("Escolha uma das opções: "))
+
+        if opt == 1:
+            Saída1, Saída2 = DadosDesejados(mercadoria)
+
+        elif opt == 2:
+            CalculoMensal(Saída1, Saída2)
+
+        elif opt == 7:
+            False
+
+
+
+        '''} elif opt == 3 {
+
+
+
+        } elif opt == 4 {
+
+
+
+        } elif opt == 5 {
+
+
+
+        } elif opt == 6 {
+
+
+    '''
+
+main()
