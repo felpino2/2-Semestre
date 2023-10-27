@@ -1,0 +1,52 @@
+package projetinho;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Bananinha2 {
+	
+	public static double mediador(char p, double a, double b, double c) {
+		double media;
+		
+		if (p == 'P') {
+			media = (a+b+c)/3;
+		} else {
+			media = ((a*5)+(b*3)+(c*2))/(5+3+2);
+		}
+		
+		return media;
+		
+	}
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		
+		Scanner sc = new Scanner(System.in);
+		
+		/*Elabore uma função que receba três notas de um aluno como parâmetro e uma letra. 
+		 * Se a letra for ‘A’ / ‘a’, a função deve calcular a média aritmética das notas do aluno; se a letra for ‘P’ / ‘p’, deverá calcular a média ponderada, com pesos 5, 3 e 2, respectivamente com as notas 1, 2, 3. 
+		 Retorne a média calculada para o programa principal.
+		 */
+		
+		double nota1;
+		double nota2;
+		double nota3;
+		char media;
+		
+		System.out.println("Qual a primeira nota? ");
+		nota1 = sc.nextDouble();
+		
+		System.out.println("Qual a segunda nota? ");
+		nota2 = sc.nextDouble();
+		
+		System.out.println("Qual a terceira nota? ");
+		nota3 = sc.nextDouble();
+		
+		System.out.println("Insira <P> para calcular a média aritmética ou <p> para a média ponderada ");
+		media = sc.next().charAt(0);
+		
+		System.out.printf("A média é %.2f", mediador(media, nota1, nota2, nota3));
+		
+	}
+
+}
