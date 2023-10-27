@@ -1,0 +1,23 @@
+// DECLARAR
+
+double [ ] vetor = new double [n] ;
+int [ ] vetor = new int [10] ;
+
+//
+// Preenchendo
+for (int i = 0; i < 10; i++) {
+			System.out.print("Digite um valor: ");
+			vetor[i] = sc.nextInt();
+		}
+
+// Imprimindo
+for (int i = 0; i < 10; i++) {
+			System.out.printf("Vetor = %d\n", vetor[i]);
+		}
+
+
+Para descobrir o tamanho do vetor é só escrever
+<nome_vetor> .length  - tamanho do vetor (linha)
+
+exemplo do código anterior:
+ vetor.length
