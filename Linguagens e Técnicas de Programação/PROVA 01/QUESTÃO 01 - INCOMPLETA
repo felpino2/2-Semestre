@@ -1,0 +1,80 @@
+'''
+
+1- Um armazém trabalha com 100 mercadorias diferentes identificadas pelos números inteiros de 1 a 
+100. O dono do armazém anota a quantidade de cada mercadoria vendida durante o mês. Ele tem 
+uma tabela que indica para cada mercadoria o preço de venda. 
+Escreva um programa para calcular o faturamento mensal do armazém, isto é: 
+Faturamento = somatório das quantidades vendidas vezes os preços. Onde k é a quantidade 
+vendida e preçok é o preço da k_ésima mercadoria
+
+'''
+# import numpy
+# import matplotlib.pyplot
+
+def DadosDesejados(mercadoria):
+
+    preços = []
+    vendas = []
+
+    for i in range(mercadoria):
+
+        preço = float(input("Digite o valor da sua mercadoria: "))
+        venda = float(input("Digite o número de vendas realizadas por ela: "))
+        preços.append(preço)
+        vendas.append(vendas)
+
+    return preços, vendas
+
+def CalculoMensal(preços,vendas):
+
+    faturamento = sum(preços*vendas)
+
+    return faturamento
+
+def main():
+
+    mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100:"))
+
+    while mercadoria > 100:
+
+        print("Erro.")
+        mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100:"))
+
+    while True: 
+
+        print("Menu de opções:\n")
+        print("1. Inserir os dados desejados (Preço e Vendas). ")
+        print("2. Calcular o faturamento mensal. ")
+        print("3. Imprimir o faturamento. ")
+        print("4. Calcular o percentual de vendas por mercadoria, sob o total faturado. ")
+        print("5. Gravar os dados em um arquivo .txt")
+        print("6. Imprimir o gráfico de vendas das cinco mercadorias mais vendidas no mês. ")
+
+        opt = input("Escolha uma das opções: ")
+    
+        if opt == 1 {
+
+
+
+        } elif opt == 2 {
+
+
+
+        } elif opt == 3 {
+
+
+
+        } elif opt == 4 {
+
+
+
+        } elif opt == 5 {
+
+
+
+        } elif opt == 6 {
+
+
+        }
+
+main()
