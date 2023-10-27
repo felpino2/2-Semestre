@@ -1,0 +1,33 @@
+package projetinho;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Bananinha2 {
+	
+	public static String noVogal(String mac) {
+		String semVogal = mac.replace("a", "");
+		semVogal = semVogal.replace("e", "");
+		semVogal = semVogal.replace("i", "");
+		semVogal = semVogal.replace("o", "");
+		semVogal = semVogal.replace("u", "");
+		
+		
+		return semVogal;
+	}
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		/*Escreva um programa que receba uma string e remova todas as vogais. Informe ao usuário o resultado.*/
+		
+		System.out.println("Insira uma string: ");
+		
+		String estringo = sc.nextLine();
+		
+		System.out.printf(" %s ", noVogal(estringo));
+		
+	}
+
+}
