@@ -1,35 +1,51 @@
 def DadosDesejados(mercadoria):
+  
+    print(f"\n\nDados das {mercadoria} mercadorias\n")
 
     preços = []
     vendas = []
 
     for i in range(mercadoria):
 
-        preço = float(input("Digite o valor da sua mercadoria " + str(i+1) + ": "))
+        preço = float(input("Digite o valor da mercadoria " + str(i+1) + ": "))
         venda = float(input("Digite o número de vendas realizadas pela mercadoria " + str(i+1) + ": "))
-        preços.append(preço)
-        vendas.append(venda)
+
+        if (preço < 0 or venda < 0):
+          print("Erro. Digite um valor maior que 0.")
+     
+        else:
+        
+          preços.append(preço)
+          vendas.append(venda)
 
     print(preços, vendas)
     return preços, vendas
-def CalculoMensal(preços,vendas):
-    faturamento = 0.0
 
+
+def CalculoMensal(preços,vendas):
+  
+    faturamento = 0.0
 
     for i in range(len(preços)):
         faturamento += (float(preços[i]) * float(vendas[i]))
 
     return faturamento
 
+
 def imprimirFaturamento(faturamento):
+  
     return print(faturamento)
 
+
 def CalculoPercentual(preços,vendas):
+  
   faturamento = CalculoMensal(preços,vendas)
   percentual = [preço*venda/faturamento for preço, venda in zip(preços, vendas)]
   return percentual
 
+
 def GravarDados(preços, vendas):
+  
   with open("dados.txt", "w") as arquivo:
     arquivo.write(f"Preços:" + {preços})
     arquivo.write(f"\nQuantidade de vendas:" + {vendas})
@@ -37,18 +53,18 @@ def GravarDados(preços, vendas):
 
 def main():
 
-    x = True
+  x = True
 
-    mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100: "))
+  mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100: "))
 
-    while mercadoria > 100:
+  while mercadoria > 100:
 
-        print("Erro.")
-        mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100: "))
+      print("Erro. Digite um número menor que 100.")
+      mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100: "))
 
-    while x:
+  while x:
 
-        print("Menu de opções:\n")
+        print("\nMenu de opções:\n")
         print("1. Inserir os dados desejados (Preço e Vendas). ")
         print("2. Calcular o faturamento mensal. ")
         print("3. Imprimir o faturamento. ")
@@ -76,7 +92,5 @@ def main():
 
         elif opt == 7:
             x = False
-
-
 
 main()
