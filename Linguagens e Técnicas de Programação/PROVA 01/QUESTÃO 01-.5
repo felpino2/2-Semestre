@@ -1,52 +1,118 @@
+import matplotlib.pyplot as plt
+import os
+import time
+
 def DadosDesejados(mercadoria):
+
+    print(f"\n\nDados das {mercadoria} mercadorias\n")
 
     preços = []
     vendas = []
 
     for i in range(mercadoria):
 
-        preço = float(input("Digite o valor da sua mercadoria " + str(i+1) + ": "))
+        preço = float(input("Digite o valor da mercadoria " + str(i+1) + ": "))
         venda = float(input("Digite o número de vendas realizadas pela mercadoria " + str(i+1) + ": "))
-        preços.append(preço)
-        vendas.append(vendas)
 
+        if (preço < 0 or venda < 0):
+          print("Erro. Digite um valor maior que 0.")
+
+        else:
+
+          preços.append(preço)
+          vendas.append(venda)
+
+    print(preços, vendas)
     return preços, vendas
 
-def CalculoMensal(preços, vendas):
-    i = 0
+
+def CalculoMensal(preços,vendas):
+
     faturamento = 0.0
-    precinhos = len(preços)
 
-
-    while i in range(precinhos):
-        print(preços[i])
-        print(vendas[i])
+    for i in range(len(preços)):
         faturamento += (float(preços[i]) * float(vendas[i]))
-
-    print(faturamento)
+      
+        if (faturamento == 0):
+          print("Não teve faturamento.")
+        
+    print("---------------")
+    print("Feito")
+    print("--------------")
+  
     return faturamento
+
+
+def imprimirFaturamento(faturamento):
+
+    return print(faturamento)
+
+
+def CalculoPercentual(preços,vendas, faturamento):
+
+  percentual = [preço*venda/faturamento for preço, venda in zip(preços, vendas)]
+  return print(percentual)
+
+
+def GravarDados(preço, venda):
+
+  with open("dados.txt", "w") as arquivo:
+    for i in range(len(preço)): 
+      arquivo.write(f"Preço:" + str(preço[i]))
+      arquivo.write(f"\nQuantidade de vendas:" + str(venda[i]))
+      arquivo.write("--------------------")
+
+
+def Grafico(vendas):
+  i = 0
+  
+  mercadoria = []
+  TUDO = {}
+  top5 = {}
+
+  for i in range(len(vendas)):
+    mercadoria.append(i+1)
+    TUDO[mercadoria[i]] = vendas[i]
+    i += 1
+
+  
+  sortedVendas = sorted(TUDO.items(), key=lambda x: x[1], reverse=True)
+  
+  top5 = sortedVendas[:5]
+  mercadorias, quantidades = zip(*top5) 
+  
+  plt.bar(mercadorias, quantidades)
+  
+  plt.xlabel("Mercadorias")
+  plt.ylabel("Quantidade Vendida")
+  plt.title("Top 5 Mercadorias Mais Vendidas")
+  plt.show()
+
 
 def main():
 
-    x = True
+  x = True
+  Saída1 = []
+  Saída2 = []
+  SaídaMensal = 0.0
 
-    mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100:"))
+  mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100: "))
 
-    while mercadoria > 100:
+  while mercadoria > 100:
 
-        print("Erro.")
-        mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100:"))
+      print("Erro. Digite um número menor que 100.")
+      mercadoria = int(input("Digite quantas mercadorias existem de 1 a 100: "))
 
-    while x:
+  while x:
 
-        print("Menu de opções:\n")
+        print("\nMenu de opções:\n")
         print("1. Inserir os dados desejados (Preço e Vendas). ")
         print("2. Calcular o faturamento mensal. ")
         print("3. Imprimir o faturamento. ")
         print("4. Calcular o percentual de vendas por mercadoria, sob o total faturado. ")
         print("5. Gravar os dados em um arquivo .txt")
         print("6. Imprimir o gráfico de vendas das cinco mercadorias mais vendidas no mês. ")
-        print("7. Para fechar o programa")
+        print("7. Parar o programa")
 
         opt = int(input("Escolha uma das opções: "))
 
@@ -54,28 +120,21 @@ def main():
             Saída1, Saída2 = DadosDesejados(mercadoria)
 
         elif opt == 2:
-            CalculoMensal(Saída1, Saída2)
+            SaídaMensal = CalculoMensal(Saída1, Saída2)
+
+        elif opt == 3:
+            imprimirFaturamento(SaídaMensal)
+
+        elif opt == 4:
+            CalculoPercentual(Saída1, Saída2, SaídaMensal)
+
+        elif opt == 5:
+            GravarDados(Saída1, Saída2)
+
+        elif opt == 6:
+            Grafico(Saída2)
 
         elif opt == 7:
             x = False
-
-
-
-        '''} elif opt == 3 {
-
-
-
-        } elif opt == 4 {
-
-
-
-        } elif opt == 5 {
-
-
-
-        } elif opt == 6 {
-
-
-    '''
 
 main()
