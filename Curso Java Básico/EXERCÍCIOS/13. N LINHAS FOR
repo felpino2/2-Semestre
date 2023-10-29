@@ -1,0 +1,24 @@
+package DIA01;
+
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Dia01 {
+
+	public static void main(String[] args) {
+		/*Fazer um programa para ler um número inteiro positivo N. 
+O programa deve então mostrar na tela N linhas, começando de 1 até N. 
+Para cada linha, mostrar o número da linha, depois o quadrado e o cubo do valor, conforme exemplo.
+*/		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int N;
+		System.out.println("Insira um número");
+		N = sc.nextInt();
+		
+		for (int i = 1; i <= N; i++) {
+			System.out.printf("Esta é a linha %d, o quadrado dela é %d e o cubo é %d\n", i, i*i, i*i*i);
+		}
+
+	}
+}
