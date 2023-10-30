@@ -1,0 +1,33 @@
+package DIA01;
+
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Dia01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		Locale.setDefault(Locale.US);
+		
+		/* Fazer um programa para ler uma temperatura em Celsius e mostrar o equivalente em Fahrenheit. 
+		 Perguntar se o usuário deseja repetir (s/n). Caso o usuário digite "s", repetir o programa. 
+Fórmula: = 9C / 5 + 32 */
+		
+		double celsius = 0;
+		char sn = 's';
+		
+		while (sn == 's') {
+			System.out.println("Qual a temperatura em Celsius? ");
+			celsius = sc.nextDouble();
+			
+			System.out.printf("A temperatura em Fahrenheit é %.2f\n", (9*celsius/5)+ 32);
+			System.out.println("Você quer continuar o programa? s para sim");
+			
+			sn = sc.next().charAt(0);
+		}
+		
+		System.out.println("Programa encerrado.");
+		
+		
+	}
+}
