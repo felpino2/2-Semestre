@@ -2,6 +2,8 @@
 Pessoa tem nome cpf idade
 
 anlista herdou pessoa e tem atributos linguagem, nivel(senior, pleno e junior) e tempo de profissao
+
+e grava em um arquivo PESSOA e outro ANALISTA
 -----------------------------
 
 herança é o mecanismo pelo qual estendemos a funcionalidade de uma classe. Por exemplo, suponha que a gente precise representar veículos de diferentes marcas e modelos em um programa. Uma abordagem é criar uma classe para representar cada veículo diferente. Porém, existem informações que são comuns a todos os veículos, como o tipo do veículo (motocicleta, carro, caminhão, etc.), chassi, marca, modelo, ano, e etc. Uma abordagem mais elegante é usar herança de modo a criar uma classe que armazena informações comuns a todos os tipos de veículos que precisamos representar e subsequentemente estender essa classe para representar veículos específicos. O exemplo abaixo mostra a classe Veiculo.
