@@ -1,5 +1,5 @@
 double [ ][ ] matriz = new double [n][n] ;
-int [ ] matriz = new int [3][3] ;
+int [ ][ ] matriz = new int [3][3] ;
 
 
 / Preenchendo
