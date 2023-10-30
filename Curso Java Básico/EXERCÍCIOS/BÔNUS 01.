@@ -1,0 +1,55 @@
+package DIA01;
+
+import java.util.Scanner;
+
+public class Dia01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Qual o tamanho do vetor?");
+		int N = sc.nextInt();
+		int zeroUm;
+		
+		
+		int [] vetorInicial =  new int [N];
+		
+		for (int i = 0; i < N; i++) {
+			System.out.println("Adicione -1 ou 0: \n");
+			zeroUm = sc.nextInt();
+			
+			if (zeroUm != 0 && zeroUm != -1) {
+				System.out.println("Tente novamente");
+				i--;
+			} else {
+				vetorInicial[i] = zeroUm;
+			}
+			
+		}
+// daqui pra baixo tem que refazer
+		
+		int [] vetorFinal = new int [N];
+		
+		int contador = 0;
+		
+		for (int i = 0; i < N; i++) {
+			for (int j = 0 ; j < N; j++) {
+			if (vetorInicial[j] != 0) {
+				contador++;
+			} else if (vetorInicial[j] == 0) {
+				if (contador == 1) {
+					vetorFinal[i] ;
+				}
+				//contador /= 2;
+				contador = 0;
+				
+			}
+				
+			}
+		}
+				/*/PASSA PELO VETOR SE TIVER DOIS 0 DIVIDE POR DOIS O TAMANHO CONTADOR -1 ATÉ SER IGUAL A ZERO)*/
+		
+		
+	}
+
+}
