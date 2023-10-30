@@ -1,0 +1,70 @@
+class Pessoa:
+    def __init__(self, nome, idade, CPF):
+        self.nome = nome
+        self.idade = idade
+        self.CPF = CPF
+
+class Analista(Pessoa):
+    def __init__(self, nome, idade, CPF, linguagem, nivel, tempo_profissao):
+        super().__init__(nome, idade, CPF)
+        self.linguagem = linguagem
+        self.nivel = nivel
+        self.tempo_profissao = tempo_profissao
+
+def criaPessoa():
+    nome = input("Qual o nome da pessoa? ")
+    idade = int(input("Qual a idade? "))
+    CPF = int(input("Qual o CPF? "))
+    pessoa = Pessoa(nome, idade, CPF)
+
+    gravaPessoa(pessoa)
+
+    sn = input("Essa pessoa é analista? <s> <n>? ")
+
+    if sn == 's':
+
+        linguagem = input("Qual a linguagem de programação que essa pessoa usa? ")
+        nivel = input("Qual o nível <sênior>, <pleno> ou <junior> ")
+        tempo_profissao = int(input("Qual o tempo nessa profissão em anos? "))
+        Anal = Analista(nome, idade, CPF, linguagem, nivel, tempo_profissao)
+
+        gravaAnalista(Anal)
+
+
+    continuar = input("Quer inserir mais alguma pessoa? <s> para sim ")
+    if continuar == 's':
+        criaPessoa()
+    else:
+        lerPessoa()
+
+
+def gravaPessoa(pessoa):
+    Arquivo = open('pessoas.txt', 'a')
+
+    Arquivo.write("----------------------------")
+    Arquivo.write("Nome: " + pessoa.nome)
+    Arquivo.write("Idade: " + str(pessoa.idade))
+    Arquivo.write("CPF: " + str(pessoa.CPF))
+    Arquivo.write("----------------------------")
+
+
+def gravaAnalista(Anal):
+    Arquivo2 = open("analista.txt", 'a')
+
+    Arquivo2.write("----------------------------")
+    Arquivo2.write("Nome: " + Anal.nome)
+    Arquivo2.write("Linguagem de Programação: " + Anal.linguagem)
+    Arquivo2.write("Nível: " + Anal.nivel)
+    Arquivo2.write("Tempo de Profissão: " + str(Anal.tempo_profissao))
+    Arquivo2.write("----------------------------")
+
+def lerPessoa():
+    Arquivo3 = open("pessoas.txt", 'r')
+    Leitura1 = Arquivo3.readline()
+
+    Arquivo4 = open("analista.txt", 'r')
+    Leitura2 = Arquivo4.readline()
+    return Leitura1, Leitura2
+
+
+criaPessoa()
