@@ -1,0 +1,23 @@
+double [ ][ ] matriz = new double [n][n] ;
+int [ ] matriz = new int [3][3] ;
+
+
+/ Preenchendo
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+		matriz[i][j] = sc.nextInt();
+		}
+	}
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < n; j++) {
+		System.out.printf("%d\t", matriz[i][j]);
+	}
+	System.out.println();
+}
+
+<nome_matriz> .length  - tamanho da linha
+<nome_matriz> [ i ].lenght - tamanho da coluna 
+exemplo do código anterior:
+matriz.length
+
+matriz[i].length
