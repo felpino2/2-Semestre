@@ -1,8 +1,9 @@
-package nome;
+package DIA01;
 
 import java.util.Scanner;
+import java.util.Locale;
 
-public class Nome {
+public class Dia01 {
 
 	public static void main(String[] args) {
 		/*Crie uma matriz 3x3 de inteiros, preencha a matriz e verifique se a matriz é um quadrado mágico. 
@@ -10,17 +11,18 @@ public class Nome {
 		 * Exemplo abaixo. 
 */		
 		
-		Scanner sc = new Scanner(System.in)
+		Scanner sc = new Scanner(System.in);
 		int [][]matriz = new int [3][3];
 		
 		int somalinha = 0;
 		int somacoluna = 0;
+		int somatudo = 0;
 		int diagonalprincipal = 0;
 		int diagonalsecundaria = 0; 
 		
 		for (int i = 0; i <3; i++) {
 			for (int j = 0; j<3; j++) {
-				System.out.printf("Insira o termo [%d][%d] da matriz", i,j);
+				System.out.printf("Insira o termo [%d][%d] da matriz\n", i,j);
 				matriz[i][j] = sc.nextInt();
 			}
 		}
@@ -28,19 +30,27 @@ public class Nome {
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				somalinha += matriz[i][j];
+				somacoluna += matriz[j][i];
+				
+				somatudo += matriz[i][j];
 				
 				if (i == j) {
 					diagonalprincipal += matriz[i][j];
 				}
-				
-				somacoluna += matriz[j][i];
+				if (i+j == 2) {
+					diagonalsecundaria += matriz[i][j];
+				}
 			}
+			if (somalinha != somacoluna) {
+				System.out.println("Não é quadrado mágico");
+				break;
+			}
+			
+			somalinha = 0;
+			somacoluna = 0;
 		}
-		if (somalinha %3 != 0) {
-			System.out.println("Não é quadrado mágico");
-		} else if (somacoluna %3 != 0) {
-			System.out.println("Não é quadrado mágico");
-		} else if (diagonalprincipal != somacoluna/3) {
+		
+		if (diagonalprincipal != somatudo/3) {
 			System.out.println("Não é quadrado mágico");
 		} else if (diagonalprincipal != diagonalsecundaria) {
 			System.out.println("Não é quadrado mágico");
@@ -48,7 +58,6 @@ public class Nome {
 			System.out.println("É quadrado mágico. ");
 		}
 		
-
 	}
 
 }
