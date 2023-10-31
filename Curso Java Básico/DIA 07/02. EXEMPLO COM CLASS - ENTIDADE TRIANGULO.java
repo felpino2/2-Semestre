@@ -13,3 +13,5 @@ public class Triangulo {
 		return area;
 	}
 }
+
+// CLASSE começa com letra maiscula e package com letraminuscula
