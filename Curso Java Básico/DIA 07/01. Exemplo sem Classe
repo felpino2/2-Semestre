@@ -1,0 +1,57 @@
+
+package nome;
+
+import java.util.Scanner;
+
+public class Nome {
+	
+	public static double Heron(double x, double y, double z) {
+		double p = (x+y+z)/3;
+		
+		double area = Math.sqrt(p*(p-x)*(p-y)*(p-z));
+		return area;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		double Ax = 0;
+		double Ay = 0;
+		double Az = 0;
+		
+		double Bx = 0;
+		double By = 0;
+		double Bz = 0;
+		
+		System.out.println("Qual o lado 1 desse triângulo? ");
+		Ax = sc.nextDouble();
+		
+		System.out.println("Qual o lado 2 desse triângulo? ");
+		Ay = sc.nextDouble();
+		
+		System.out.println("Qual o lado 3 desse triângulo? ");
+		Az = sc.nextDouble();
+		
+		double AreaA = Heron(Ax, Ay, Az);
+		
+		
+		System.out.println("Qual o lado 1 desse triângulo? ");
+		Bx = sc.nextDouble();
+		
+		System.out.println("Qual o lado 2 desse triângulo? ");
+		By = sc.nextDouble();
+		
+		System.out.println("Qual o lado 3 desse triângulo? ");
+		Bz = sc.nextDouble();
+		
+		double AreaB = Heron(Bx, By, Bz);
+		
+		if (AreaA > AreaB) {
+			System.out.println("A é maior. ");
+		} else {
+			System.out.println("B é maior. ");
+		}
+
+	}
+
+}
