@@ -1,0 +1,27 @@
+package nome;
+
+import java.util.Scanner;
+import entidade.Retangulo;
+import java.util.Locale;
+
+public class Programa {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Retangulo A = new Retangulo();
+		
+		System.out.println("QUAL A BASE? ");
+		A.base = sc.nextDouble();
+		
+		System.out.println("Qual a altura? ");
+		A.altura = sc.nextDouble();
+		
+		double areaRetangulo = A.area();
+		
+		double perimetroRetangulo = A.perimetro();
+		
+		double diagonalRetangulo = A.diagonal();
+		
+		System.out.printf("Área %.2f, Perímetro %.2f, Diagonal %.2f", areaRetangulo, perimetroRetangulo, diagonalRetangulo);
+	}
+}
