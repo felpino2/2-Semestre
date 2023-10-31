@@ -1,0 +1,19 @@
+package entidade;
+
+public class Retangulo {
+	public double base;
+	public double altura;
+	
+		public double area(){
+			return base*altura;
+		}
+		public double perimetro(){
+			return base+base+altura+altura;
+		}
+		
+		public double diagonal() {
+			double diagon = Math.sqrt((base*base) + (altura*altura));
+			
+			return diagon;
+		}
+}
