@@ -35,3 +35,63 @@ final class Classe {
 	}
 }
 }
+
+
+
+
+
+
+//////////////////////////////////////////////////
+package pacotinho;
+
+import java.util.Scanner;
+
+public class Classe {
+
+	public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Qual o número de possíveis consultas? ");
+		int possivel = sc.nextInt();
+		
+		int [][] matrizhorario = new int [possivel][2];
+		int [][] vetorimpossivel = new int [possivel][2];
+		
+		
+		for (int i = 0; i < possivel; i++) {
+			for (int j = 0; j < 2; j++) {
+				matrizhorario[i][j] = sc.nextInt();
+				vetorimpossivel[i][j] = 0;
+			}
+			System.out.println("\n");
+		}
+	int contador = 0;	
+		
+
+	
+	
+		for (int i = 0; i < possivel; i++) {
+			for (int j = 0; j < possivel; j++) {
+				for (int l = 0; l < possivel; l++) {
+					if (i == j) {
+					}
+					if (matrizhorario[j][0] == vetorimpossivel[l][0]) {
+						possivel++;
+					} else if (matrizhorario[i][0] > matrizhorario[j][1]) {
+						possivel--;
+						vetorimpossivel[contador][0] = matrizhorario[i][0];
+						vetorimpossivel[contador][1] = matrizhorario[i][1];
+						System.out.printf("%d, %d \n", matrizhorario[j][0], matrizhorario[j][1]);
+						contador++;
+						
+					}
+						}
+							}
+								}
+		
+		System.out.printf("%d", possivel);
+
+	}
+
+}
+
