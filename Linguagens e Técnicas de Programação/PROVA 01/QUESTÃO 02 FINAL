@@ -1,0 +1,75 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as mtp
+    
+f = open("folha_pag", "w+")
+funcionario = int(input("Quantos funcionarios:"))
+
+for i in range(funcionario):
+            nome = input("Nome do funcionario %d: " % (i + 1))
+            cargo = input("Cargo do funcionario %d: " % (i + 1))
+            salario = float(input("Salario do funcionario %d: " % (i + 1)))
+            horas = int(input("Horas do funcionario %d: " % (i + 1)))
+            f.write("Funcionario %d:     Nome: %s     Cargo: %s    Salario: %.2f   Horas: %d\n" % (i + 1, nome, cargo, salario, horas))
+print("\n")
+
+f.close
+
+f = open("folha_pag","r")
+
+f.seek(0)
+salarios = []
+
+for line in f:
+            linha = line.split()
+
+            for i,palavra in enumerate(linha):
+                if palavra == "Salario:":
+                    salario = float(linha[i+1])
+                    salarios.append(salario)
+descontos = []
+desconto_total = 0.0
+salario_bruto = 0.0
+salario_liquido = 0.0
+for i in salarios:
+
+            salario_bruto = salario_bruto + i
+
+            if i<=1500:
+                descontos.append(0)
+                salario_liquido = salario_liquido + i
+
+            elif i>1500 and i <= 3000:
+                descontos.append((i*0.15))
+                salario_liquido = salario_liquido + (i-(i*0.15))
+                desconto_total = desconto_total + (i*0.15)
+
+            elif i>3000 and i <=5000:
+                descontos.append((i*0.20))
+                salario_liquido = salario_liquido + (i-(i*0.20))
+                desconto_total = desconto_total + (i*0.20)
+
+            elif i>5000:
+                descontos.append((i*0.27))
+                salario_liquido = salario_liquido + (i-(i*0.27))
+                desconto_total = desconto_total + (i*0.27)
+
+
+
+
+r = open("relatorio","w+")
+for im, i in enumerate(descontos):
+            r.write("desconto do funcionario %d: %.2f\n" % (im+1,i))
+            r.write("total salario bruto : %.2f\n" % (salario_bruto))
+            r.write("total salario liquido: %.2f\n" %(salario_liquido))
+            r.write("total desconto: %.2f" %(desconto_total))
+            r.close()
+
+
+print("relatorio: \n")
+
+with open("relatorio","r") as file:
+
+    for line in file:
+                print(line, end="") 
+                f.close()
